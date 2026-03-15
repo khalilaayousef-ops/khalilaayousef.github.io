@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khalil Ayman Portfolio</title>
+    <style>
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { line-height: 1.6; background-color: #f4f4f9; color: #333; }
 
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        header p { font-size: 1.2rem; }
+
+        nav { background: #333; }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li { margin: 0 15px; }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            display: block;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: #4a90e2; }
+
+        section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+        section h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #4a90e2; }
+
+        .projects, .skills, .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 280px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+
+        a.button {
+            display: inline-block;
+            background: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        a.button:hover { background: #357ABD; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Khalil Ayman</h1>
+        <p>Content Creator | Digital Projects | Multimedia</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I am Khalil Ayman, a passionate content creator specializing in multimedia, digital storytelling, and interactive projects. I love turning ideas into engaging content that connects with audiences.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="card">
+                <h3>YouTube Channel</h3>
+                <p>Video content creation including tutorials, vlogs, and creative storytelling.</p>
+                <a href="#" class="button">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Graphic Design Portfolio</h3>
+                <p>Social media visuals, posters, and branding projects designed for various clients.</p>
+                <a href="#" class="button">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Content Automation Tools</h3>
+                <p>Scripts and small tools developed to enhance content creation workflow.</p>
+                <a href="#" class="button">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="card"><h3>Video Editing</h3><p>Adobe Premiere, After Effects, Final Cut Pro</p></div>
+            <div class="card"><h3>Design</h3><p>Figma, Photoshop, Illustrator</p></div>
+            <div class="card"><h3>Coding & Automation</h3><p>Python, JavaScript</p></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact">
+            <div class="card">
+                <h3>Email</h3>
+                <p>youremail@example.com</p>
+            </div>
+            <div class="card">
+                <h3>LinkedIn</h3>
+                <p><a href="#" class="button">Visit Profile</a></p>
+            </div>
+            <div class="card">
+                <h3>Website</h3>
+                <p><a href="#" class="button">Visit Website</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Khalil Ayman. All rights reserved.
+    </footer>
+
+</body>
+</html>
