@@ -2,321 +2,159 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Khalil Ayman | Creative Portfolio</title>
 
 <style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
+body { background:#0f172a; color:white; line-height:1.6; }
+a { text-decoration:none; color:#38bdf8; }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
+header { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; }
+header h1 { font-size:48px; margin-bottom:10px; }
+header p { font-size:20px; color:#cbd5f5; }
+.btn { margin-top:25px; padding:12px 30px; background:#38bdf8; border:none; border-radius:6px; color:white; font-size:16px; cursor:pointer; }
 
-body{
-background:#0f172a;
-color:white;
-line-height:1.6;
-}
+nav { background:#020617; position:sticky; top:0; z-index:1000; }
+nav ul { display:flex; justify-content:center; list-style:none; }
+nav li { margin:0 20px; }
+nav a { color:white; display:block; padding:15px; }
+nav a:hover { color:#38bdf8; }
 
-header{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
+section { max-width:1100px; margin:auto; padding:80px 20px; }
+h2 { text-align:center; margin-bottom:40px; font-size:32px; }
 
-header h1{
-font-size:48px;
-margin-bottom:10px;
-}
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+.card { background:#1e293b; padding:20px; border-radius:10px; text-align:center; transition:.3s; }
+.card:hover { transform:translateY(-5px); }
+.card img { width:100%; border-radius:8px; cursor:pointer; }
 
-header p{
-font-size:20px;
-color:#cbd5f5;
-}
+.skill { margin-bottom:15px; }
+.progress { background:#334155; height:8px; border-radius:5px; }
+.progress div { background:#38bdf8; height:8px; border-radius:5px; }
 
-.btn{
-margin-top:25px;
-padding:12px 30px;
-background:#38bdf8;
-border:none;
-border-radius:6px;
-color:white;
-font-size:16px;
-cursor:pointer;
-text-decoration:none;
-}
+footer { background:#020617; text-align:center; padding:20px; }
 
-nav{
-background:#020617;
-position:sticky;
-top:0;
-}
-
-nav ul{
-display:flex;
-justify-content:center;
-list-style:none;
-}
-
-nav li{
-margin:0 20px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-padding:15px;
-display:block;
-}
-
-section{
-max-width:1100px;
-margin:auto;
-padding:80px 20px;
-}
-
-h2{
-text-align:center;
-margin-bottom:40px;
-font-size:32px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:10px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.skill{
-margin-bottom:15px;
-}
-
-.progress{
-background:#334155;
-height:8px;
-border-radius:5px;
-}
-
-.progress div{
-background:#38bdf8;
-height:8px;
-border-radius:5px;
-}
-
-.work{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-}
-
-.work a{
-color:#38bdf8;
-}
-
-footer{
-background:#020617;
-text-align:center;
-padding:20px;
-}
+#lightbox { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); display:none; justify-content:center; align-items:center; z-index:2000; }
+#lightbox img { max-width:90%; max-height:90%; }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
-
 <h1>Khalil Ayman Abdelaziz</h1>
-
-<p>Content Creator | Writer | Poet | Actor | Scenarist</p>
-
+<p>Content Creator | Writer | Poet | Actor</p>
 <p>Haram St., Giza – Egypt</p>
-
 <a class="btn" href="#projects">View My Work</a>
-
+<a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
 </header>
 
 <nav>
-
 <ul>
-
 <li><a href="#about">About</a></li>
 <li><a href="#education">Education</a></li>
 <li><a href="#skills">Skills</a></li>
+<li><a href="#achievements">Achievements</a></li>
 <li><a href="#projects">Works</a></li>
 <li><a href="#contact">Contact</a></li>
-
 </ul>
-
 </nav>
 
 <section id="about">
-
 <h2>Career Highlights</h2>
-
 <div class="grid">
-
-<div class="card">
-First place – Classical Poetry (Faculty of Commerce)
+<div class="card">First place – Classical Poetry (Faculty of Commerce)</div>
+<div class="card">First place – Classical Poetry (Tanta University 2015 & 2016)</div>
+<div class="card">First place – Short Story – Gharbia Governorate</div>
+<div class="card">Ambassador of Tanta University – Ministry of Youth & Sports</div>
 </div>
-
-<div class="card">
-First place – Classical Poetry (Tanta University 2015 & 2016)
-</div>
-
-<div class="card">
-First place – Short Story – Gharbia Governorate
-</div>
-
-<div class="card">
-Ambassador of Tanta University – Ministry of Youth & Sports Competition
-</div>
-
-</div>
-
 </section>
 
 <section id="education">
-
 <h2>Education</h2>
-
 <div class="grid">
-
-<div class="card">
-Bachelor of Commerce – Accounting (English Section)  
-Tanta University – 2019
+<div class="card">Bachelor of Commerce – Accounting, English Section – Tanta University – 2019</div>
+<div class="card">Faculty of Arts – Theater Sciences – Helwan University (Current Study)</div>
+<div class="card">Arab School of Cinema – Higher Institute of Cinema – Cairo (Current Study)</div>
 </div>
-
-<div class="card">
-Faculty of Arts – Theater Sciences  
-Helwan University
-</div>
-
-<div class="card">
-Arab School of Cinema  
-Higher Institute of Cinema – Cairo
-</div>
-
-</div>
-
 </section>
 
 <section id="skills">
-
 <h2>Skills</h2>
-
 <div class="grid">
-
 <div class="card">
-
 <h3>Computer Skills</h3>
-
 <div class="skill">SQL<div class="progress"><div style="width:85%"></div></div></div>
-
-<div class="skill">Linux Server<div class="progress"><div style="width:80%"></div></div></div>
-
-<div class="skill">Excel<div class="progress"><div style="width:90%"></div></div></div>
-
+<div class="skill">Linux<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Excel & PowerPoint<div class="progress"><div style="width:90%"></div></div></div>
 </div>
-
 <div class="card">
-
 <h3>Creative Tools</h3>
-
 <div class="skill">CapCut Pro<div class="progress"><div style="width:95%"></div></div></div>
-
 <div class="skill">InShot<div class="progress"><div style="width:90%"></div></div></div>
-
 <div class="skill">Canva Pro<div class="progress"><div style="width:95%"></div></div></div>
-
 </div>
-
 <div class="card">
-
 <h3>Personal Skills</h3>
-
-<p>Multitasking</p>
-<p>Creative Thinking</p>
-<p>Attention to Details</p>
-<p>Copywriting</p>
-
+<p>Multitasking, Creative Thinking, Attention to Details, Copywriting, Strong Stakeholder Management</p>
 </div>
-
 </div>
+</section>
 
+<section id="achievements">
+<h2>Achievements & Awards</h2>
+<div class="grid">
+<div class="card"><img src="images/award1.jpeg" onclick="openImage(this.src)"><p>Poetry Award</p></div>
+<div class="card"><img src="images/award2.jpeg" onclick="openImage(this.src)"><p>Cultural Festival</p></div>
+<div class="card"><img src="images/award3.jpeg" onclick="openImage(this.src)"><p>Creative Writing</p></div>
+<div class="card"><img src="images/award4.jpeg" onclick="openImage(this.src)"><p>Theatre Competition</p></div>
+<div class="card"><img src="images/award5.jpeg" onclick="openImage(this.src)"><p>Literary Competition</p></div>
+<div class="card"><img src="images/award6.jpeg" onclick="openImage(this.src)"><p>University Award</p></div>
+<div class="card"><img src="images/award7.jpeg" onclick="openImage(this.src)"><p>Creative Festival</p></div>
+<div class="card"><img src="images/award8.jpeg" onclick="openImage(this.src)"><p>Poetry Achievement</p></div>
+<div class="card"><img src="images/award9.jpeg" onclick="openImage(this.src)"><p>Literary Recognition</p></div>
+</div>
 </section>
 
 <section id="projects">
-
 <h2>Creative Works</h2>
-
 <div class="grid">
-
-<div class="work">
-<h3>Short Film Script</h3>
-<a href="https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view" target="_blank">View Work</a>
+<div class="card"><h3>Short Film Script</h3><a href="https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view" target="_blank">View Work</a></div>
+<div class="card"><h3>Novel – As if an Angel Awakened Me</h3><a href="https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view" target="_blank">Read</a></div>
+<div class="card"><h3>Creative Script – Hala</h3><a href="https://drive.google.com/file/d/16WOXSdBURBaNYtBwVX0eapmpQwrLS7IQ/view" target="_blank">View</a></div>
+<div class="card"><h3>Acting – Hamdy</h3><a href="https://drive.google.com/file/d/1NSrDmQoAIEYdwxF0rfLRu4s2VkS0HhDT/view" target="_blank">Watch</a></div>
 </div>
-
-<div class="work">
-<h3>Novel – As if an Angel Awakened Me</h3>
-<a href="https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view" target="_blank">Read</a>
-</div>
-
-<div class="work">
-<h3>Creative Script – Hala</h3>
-<a href="https://drive.google.com/file/d/16WOXSdBURBaNYtBwVX0eapmpQwrLS7IQ/view" target="_blank">View</a>
-</div>
-
-<div class="work">
-<h3>Acting – Hamdy</h3>
-<a href="https://drive.google.com/file/d/1NSrDmQoAIEYdwxF0rfLRu4s2VkS0HhDT/view" target="_blank">Watch</a>
-</div>
-
-</div>
-
 </section>
 
 <section id="contact">
-
 <h2>Contact</h2>
-
 <div class="card">
-
-<p>📍 Haram St., Giza</p>
+<p>📍 Haram St., Giza – Egypt</p>
 <p>📞 +201115002997</p>
 <p>✉ Khalil.aayousef@gmail.com</p>
-
 </div>
-
 </section>
 
 <footer>
-
 © 2026 Khalil Ayman Portfolio
-
 </footer>
 
-</body>
+<div id="lightbox" onclick="closeImage()">
+<img id="lightbox-img">
+</div>
 
+<script>
+function openImage(src){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=src;
+}
+function closeImage(){
+document.getElementById("lightbox").style.display="none";
+}
+</script>
+
+</body>
 </html>
