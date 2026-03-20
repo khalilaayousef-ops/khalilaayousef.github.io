@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@
 body{
 background:#020617;
 color:white;
-scroll-behavior:smooth;
 }
 
 header{
@@ -22,16 +20,15 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(180deg,#020617,#0f172a);
 }
 
-header h1{font-size:50px;}
-header p{color:#94a3b8;margin-top:10px;}
+header h1{font-size:48px;}
+header p{color:#94a3b8;}
 
 nav{
+background:#020617;
 position:sticky;
 top:0;
-background:#020617;
 border-bottom:1px solid #1e293b;
 }
 
@@ -46,8 +43,8 @@ nav li{margin:0 15px;}
 nav a{
 color:white;
 padding:15px;
-text-decoration:none;
 display:block;
+text-decoration:none;
 }
 
 nav a:hover{color:#38bdf8;}
@@ -72,23 +69,14 @@ gap:20px;
 .card{
 background:#0f172a;
 padding:20px;
-border-radius:12px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
+border-radius:10px;
+text-align:center;
 }
 
 .gallery img{
 width:100%;
 border-radius:10px;
 cursor:pointer;
-transition:.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
 }
 
 #viewer{
@@ -97,25 +85,17 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.95);
+background:rgba(0,0,0,0.9);
 display:none;
 justify-content:center;
 align-items:center;
-z-index:999;
 }
 
 #viewer img{
 max-width:90%;
 max-height:90%;
-border-radius:10px;
 }
 
-footer{
-text-align:center;
-padding:20px;
-background:#020617;
-color:#64748b;
-}
 </style>
 </head>
 
@@ -135,32 +115,28 @@ color:#64748b;
 </nav>
 
 <section id="about">
-<h2>About Me</h2>
-
+<h2>About</h2>
 <div class="grid">
-<div class="card">Award-winning poet and creative writer.</div>
-<div class="card">Content creator for brands.</div>
-<div class="card">Actor & storyteller.</div>
+<div class="card">Award-winning poet</div>
+<div class="card">Content creator</div>
+<div class="card">Actor & writer</div>
 </div>
-
 </section>
 
 <section id="achievements">
-
-<h2>Achievements & Awards</h2>
+<h2>Achievements</h2>
 
 <div class="grid gallery">
 
-<img src="images/award1.jpeg" onclick="openImage(this.src)">
-<img src="images/award2.jpeg" onclick="openImage(this.src)">
-<img src="images/award3.jpeg" onclick="openImage(this.src)">
-<img src="images/award4.jpeg" onclick="openImage(this.src)">
-<img src="images/award5.jpeg" onclick="openImage(this.src)">
-<img src="images/award6.jpeg" onclick="openImage(this.src)">
-<img src="images/award7.jpeg" onclick="openImage(this.src)">
-<img src="images/award8.jpeg" onclick="openImage(this.src)">
-<img src="images/award9.jpeg" onclick="openImage(this.src)">
-<img src="images/award10.jpeg" onclick="openImage(this.src)">
+<img src="images/award1.jpg" onclick="openImage(this.src)">
+<img src="images/award2.jpg" onclick="openImage(this.src)">
+<img src="images/award3.jpg" onclick="openImage(this.src)">
+<img src="images/award4.jpg" onclick="openImage(this.src)">
+<img src="images/award5.jpg" onclick="openImage(this.src)">
+<img src="images/award6.jpg" onclick="openImage(this.src)">
+<img src="images/award7.jpg" onclick="openImage(this.src)">
+<img src="images/award8.jpg" onclick="openImage(this.src)">
+<img src="images/award9.jpg" onclick="openImage(this.src)">
 
 </div>
 
@@ -168,17 +144,15 @@ color:#64748b;
 
 <section id="contact">
 <h2>Contact</h2>
-
 <div class="card">
 📍 Giza, Egypt<br>
 📞 +201115002997<br>
 ✉ Khalil.aayousef@gmail.com
 </div>
-
 </section>
 
 <footer>
-© 2026 Khalil Ayman Portfolio
+© 2026 Khalil Ayman
 </footer>
 
 <div id="viewer" onclick="closeImage()">
@@ -186,7 +160,6 @@ color:#64748b;
 </div>
 
 <script>
-
 function openImage(src){
 document.getElementById("viewer").style.display="flex";
 document.getElementById("viewer-img").src=src;
@@ -195,7 +168,6 @@ document.getElementById("viewer-img").src=src;
 function closeImage(){
 document.getElementById("viewer").style.display="none";
 }
-
 </script>
 
 </body>
