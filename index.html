@@ -4,42 +4,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khalil Ayman | Creative Portfolio</title>
+<title>Khalil Ayman | Portfolio</title>
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
-body { background:#0f172a; color:white; line-height:1.6; }
-a { text-decoration:none; color:#38bdf8; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 
-header { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; }
-header h1 { font-size:48px; margin-bottom:10px; }
-header p { font-size:20px; color:#cbd5f5; }
+body{
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
 
-.btn { margin-top:15px; padding:12px 25px; background:#38bdf8; border:none; border-radius:6px; color:white; display:inline-block; }
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
 
-nav { background:#020617; position:sticky; top:0; z-index:1000; }
-nav ul { display:flex; justify-content:center; list-style:none; }
-nav li { margin:0 20px; }
-nav a { color:white; display:block; padding:15px; }
-nav a:hover { color:#38bdf8; }
+header h1{font-size:48px;}
+header p{color:#94a3b8;margin-top:10px;}
 
-section { max-width:1100px; margin:auto; padding:80px 20px; }
-h2 { text-align:center; margin-bottom:40px; font-size:32px; }
+.btn{
+margin-top:15px;
+padding:10px 20px;
+background:#38bdf8;
+border-radius:5px;
+color:white;
+display:inline-block;
+}
 
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+nav{
+background:#020617;
+position:sticky;
+top:0;
+}
 
-.card { background:#1e293b; padding:20px; border-radius:10px; text-align:center; transition:.3s; }
-.card:hover { transform:translateY(-5px); }
+nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+}
 
-.card img { width:100%; border-radius:8px; cursor:pointer; }
+nav li{margin:0 15px;}
 
-.skill { margin-bottom:15px; }
-.progress { background:#334155; height:8px; border-radius:5px; }
-.progress div { background:#38bdf8; height:8px; border-radius:5px; }
+nav a{
+color:white;
+padding:15px;
+display:block;
+text-decoration:none;
+}
 
-footer { background:#020617; text-align:center; padding:20px; }
+section{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+}
 
-#lightbox {
+h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+cursor:pointer;
+}
+
+footer{
+background:#020617;
+text-align:center;
+padding:20px;
+}
+
+/* LIGHTBOX */
+
+#lightbox{
 position:fixed;
 top:0;
 left:0;
@@ -49,120 +105,73 @@ background:rgba(0,0,0,0.9);
 display:none;
 justify-content:center;
 align-items:center;
-z-index:2000;
 }
 
-#lightbox img {
+#lightbox img{
 max-width:90%;
 max-height:90%;
-border-radius:10px;
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Khalil Ayman Abdelaziz</h1>
-<p>Content Creator | Writer | Poet | Actor</p>
-<p>Haram St., Giza – Egypt</p>
-
-<a class="btn" href="#projects">View My Work</a>
-<a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
-
+<h1>Khalil Ayman</h1>
+<p>Content Creator | Writer | Actor</p>
+<a class="btn" href="#achievements">View My Work</a>
 </header>
 
 <nav>
 <ul>
 <li><a href="#about">About</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#skills">Skills</a></li>
 <li><a href="#achievements">Achievements</a></li>
-<li><a href="#projects">Works</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
 <section id="about">
-<h2>Career Highlights</h2>
+<h2>About Me</h2>
+
 <div class="grid">
-<div class="card">First place – Classical Poetry</div>
-<div class="card">First place – Tanta University 2015 & 2016</div>
-<div class="card">First place – Short Story</div>
-<div class="card">University Ambassador</div>
-</div>
-</section>
-
-<section id="education">
-<h2>Education</h2>
-<div class="grid">
-<div class="card">Bachelor of Commerce – Tanta University</div>
-<div class="card">Theater Sciences – Helwan University</div>
-<div class="card">Arab School of Cinema – Cairo</div>
-</div>
-</section>
-
-<section id="skills">
-<h2>Skills</h2>
-<div class="grid">
-
-<div class="card">
-<h3>Computer</h3>
-<div class="skill">SQL<div class="progress"><div style="width:85%"></div></div></div>
-<div class="skill">Linux<div class="progress"><div style="width:80%"></div></div></div>
+<div class="card">Award-winning poet & writer</div>
+<div class="card">Content creator for brands</div>
+<div class="card">Actor & storyteller</div>
 </div>
 
-<div class="card">
-<h3>Creative Tools</h3>
-<div class="skill">CapCut<div class="progress"><div style="width:95%"></div></div></div>
-<div class="skill">Canva<div class="progress"><div style="width:90%"></div></div></div>
-</div>
-
-</div>
 </section>
 
 <section id="achievements">
+
 <h2>Achievements & Awards</h2>
 
 <div class="grid">
 
-<div class="card"><img src="images/award1.jpg" onclick="openImage(this.src)"><p>Poetry Award</p></div>
-<div class="card"><img src="images/award2.jpg" onclick="openImage(this.src)"><p>Cultural Festival</p></div>
-<div class="card"><img src="images/award3.jpg" onclick="openImage(this.src)"><p>Creative Writing</p></div>
-<div class="card"><img src="images/award4.jpg" onclick="openImage(this.src)"><p>Theatre Competition</p></div>
-<div class="card"><img src="images/award5.jpg" onclick="openImage(this.src)"><p>Literary Competition</p></div>
-<div class="card"><img src="images/award6.jpg" onclick="openImage(this.src)"><p>University Award</p></div>
-<div class="card"><img src="images/award7.jpg" onclick="openImage(this.src)"><p>Creative Festival</p></div>
-<div class="card"><img src="images/award8.jpg" onclick="openImage(this.src)"><p>Poetry Achievement</p></div>
-<div class="card"><img src="images/award9.jpg" onclick="openImage(this.src)"><p>Literary Recognition</p></div>
+<img src="images/award1.jpg" onclick="openImage(this.src)">
+<img src="images/award2.jpg" onclick="openImage(this.src)">
+<img src="images/award3.jpg" onclick="openImage(this.src)">
+<img src="images/award4.jpg" onclick="openImage(this.src)">
+<img src="images/award5.jpg" onclick="openImage(this.src)">
+<img src="images/award6.jpg" onclick="openImage(this.src)">
+<img src="images/award7.jpg" onclick="openImage(this.src)">
+<img src="images/award8.jpg" onclick="openImage(this.src)">
+<img src="images/award9.jpg" onclick="openImage(this.src)">
 
 </div>
-</section>
 
-<section id="projects">
-<h2>Creative Works</h2>
-<div class="grid">
-
-<div class="card">
-<h3>Short Film</h3>
-<a href="https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view" target="_blank">View</a>
-</div>
-
-<div class="card">
-<h3>Novel</h3>
-<a href="https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view" target="_blank">Read</a>
-</div>
-
-</div>
 </section>
 
 <section id="contact">
+
 <h2>Contact</h2>
+
 <div class="card">
 📍 Giza, Egypt<br>
 📞 +201115002997<br>
 ✉ Khalil.aayousef@gmail.com
 </div>
+
 </section>
 
 <footer>
@@ -174,6 +183,7 @@ border-radius:10px;
 </div>
 
 <script>
+
 function openImage(src){
 document.getElementById("lightbox").style.display="flex";
 document.getElementById("lightbox-img").src=src;
@@ -182,6 +192,7 @@ document.getElementById("lightbox-img").src=src;
 function closeImage(){
 document.getElementById("lightbox").style.display="none";
 }
+
 </script>
 
 </body>
