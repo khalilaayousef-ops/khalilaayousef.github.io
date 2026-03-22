@@ -7,6 +7,29 @@
 <title>Khalil Ayman | Creative Portfolio</title>
 
 <style>
+  .whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:999;
+transition:0.3s;
+}
+
+.whatsapp img{
+width:28px;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
 * { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
 body { background:#0f172a; color:white; line-height:1.6; }
 a { text-decoration:none; color:#38bdf8; }
@@ -179,7 +202,6 @@ border-radius:10px;
 📞 +201115002997<br>
   📞 +201273117296<br>
   
-<a href="https://wa.me/201115002997" target="_blank" class="whatsapp"></a>
 ✉ Khalil.aayousef@gmail.com
 </div>
 </section>
@@ -203,5 +225,10 @@ document.getElementById("lightbox").style.display="none";
 }
 </script>
 
-</body>
+<a href="https://wa.me/201115002997?text=Hello%20Khalil,%20I%20saw%20your%20portfolio"
+target="_blank" class="whatsapp">
+
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+
+</a></body>
 </html>
