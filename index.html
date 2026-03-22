@@ -1,45 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Khalil Ayman | Creative Portfolio</title>
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
-body { background:#0f172a; color:white; line-height:1.6; }
-a { text-decoration:none; color:#38bdf8; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
 
-header { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; }
-header h1 { font-size:48px; margin-bottom:10px; }
-header p { font-size:20px; color:#cbd5f5; }
+body{
+background:#f5f7fa;
+color:#111;
+line-height:1.7;
+}
 
-.btn { margin-top:15px; padding:12px 25px; background:#38bdf8; border:none; border-radius:6px; color:white; display:inline-block; }
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 50px;
+background:white;
+box-shadow:0 2px 15px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:1000;
+}
 
-nav { background:#020617; position:sticky; top:0; z-index:1000; }
-nav ul { display:flex; justify-content:center; list-style:none; }
-nav li { margin:0 20px; }
-nav a { color:white; display:block; padding:15px; }
-nav a:hover { color:#38bdf8; }
+nav h1{font-size:20px;}
 
-section { max-width:1100px; margin:auto; padding:80px 20px; }
-h2 { text-align:center; margin-bottom:40px; font-size:32px; }
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
 
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+/* HERO */
+.hero{
+padding:100px 20px;
+text-align:center;
+}
 
-.card { background:#1e293b; padding:20px; border-radius:10px; text-align:center; transition:.3s; }
-.card:hover { transform:translateY(-5px); }
+.hero h2{
+font-size:42px;
+margin-bottom:10px;
+}
 
-.card img { width:100%; border-radius:8px; cursor:pointer; }
+.hero p{
+color:#666;
+}
 
-.skill { margin-bottom:15px; }
-.progress { background:#334155; height:8px; border-radius:5px; }
-.progress div { background:#38bdf8; height:8px; border-radius:5px; }
+/* SECTION */
+section{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+}
 
-footer { background:#020617; text-align:center; padding:20px; }
+.section-title{
+font-size:28px;
+margin-bottom:40px;
+}
 
-#lightbox {
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* BRANDS */
+.card h3{
+margin-bottom:10px;
+}
+
+.card a{
+display:inline-block;
+margin-top:10px;
+color:#0ea5e9;
+}
+
+/* GALLERY */
+.gallery img{
+width:100%;
+border-radius:12px;
+cursor:pointer;
+}
+
+/* CONTACT */
+.contact{
+text-align:center;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+color:#777;
+}
+
+/* LIGHTBOX */
+#lightbox{
 position:fixed;
 top:0;
 left:0;
@@ -52,130 +126,122 @@ align-items:center;
 z-index:2000;
 }
 
-#lightbox img {
+#lightbox img{
 max-width:90%;
 max-height:90%;
-border-radius:10px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>Khalil Ayman Abdelaziz</h1>
-<p>Content Creator |  Freelancer </p>
-<p>Haram St., Giza – Egypt</p>
-
-<a class="btn" href="#projects">View My Work</a>
-<a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
-
-</header>
-
+<!-- NAV -->
 <nav>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#achievements">Achievements</a></li>
-<li><a href="#projects">Works</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<h1>Khalil Ayman</h1>
+<div>
+<a href="#brands">Brands</a>
+<a href="#achievements">Achievements</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
-<section id="about">
-<h2>Career Highlights</h2>
-<div class="grid">
-  <div class="card">Content Creator</div>
-<div class="card"> Classical  Poet</div>
-<div class="card">Storyteller</div>
-<div class="card"> Author</div>
-  
-<div class="card"> Actor</div>
+<!-- HERO -->
+<div class="hero">
+<h2>Creative Content Creator</h2>
+<p>I create stories, content & brand experiences that connect with people.</p>
 </div>
-</section>
 
-<section id="education">
-<h2>Education</h2>
-<div class="grid">
-<div class="card">Bachelor of Commerce – Tanta University</div>
-<div class="card">Theater Sciences – Helwan University</div>
-<div class="card">Arab School of Cinema – Cairo</div>
-</div>
-</section>
+<!-- BRANDS -->
+<section id="brands">
+<h3 class="section-title">Brands I Worked With</h3>
 
-<section id="skills">
-<h2>Skills</h2>
 <div class="grid">
 
 <div class="card">
-<h3>Computer</h3>
-<div class="skill">SQL<div class="progress"><div style="width:85%"></div></div></div>
-<div class="skill">Linux<div class="progress"><div style="width:80%"></div></div></div>
+<h3>Hi Risk</h3>
+<p><b>Industry:</b> Restaurant & Cafe</p>
+<p>Created engaging social media content to attract local audience.</p>
+<a href="#">View Page</a>
 </div>
 
 <div class="card">
-<h3>Creative Tools</h3>
-<div class="skill">CapCut<div class="progress"><div style="width:95%"></div></div></div>
-<div class="skill">Canva<div class="progress"><div style="width:90%"></div></div></div>
+<h3>Ceramed</h3>
+<p><b>Industry:</b> Cosmetics & Pharma</p>
+<p>Managed content across Facebook, Instagram & TikTok platforms.</p>
+<a href="#">View Instagram</a>
+</div>
+
+<div class="card">
+<h3>Hameed</h3>
+<p><b>Industry:</b> Restaurant</p>
+<p>Produced content tailored for food branding and engagement.</p>
+<a href="#">View Page</a>
+</div>
+
+<div class="card">
+<h3>Mokbel Design & Architecture</h3>
+<p><b>Industry:</b> Interior Design</p>
+<p>Handled bilingual content (Arabic & English) for brand presence.</p>
+<a href="#">View Page</a>
+</div>
+
+<div class="card">
+<h3>Calzolaio</h3>
+<p><b>Role:</b> Copywriter</p>
+<p>Created Italian-inspired product naming & storytelling content.</p>
+<a href="#">View Page</a>
+</div>
+
+<div class="card">
+<h3>Almoudawah</h3>
+<p><b>Industry:</b> Medical & Therapy</p>
+<p>Created professional healthcare content for multi-city presence.</p>
+<a href="#">View Instagram</a>
+</div>
+
+<div class="card">
+<h3>Flebiny Salon</h3>
+<p><b>Industry:</b> Celebrity Salon</p>
+<p>Produced premium content targeting high-end audience.</p>
+<a href="https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G" target="_blank">
+View Work
+</a>
 </div>
 
 </div>
 </section>
 
+<!-- ACHIEVEMENTS -->
 <section id="achievements">
-<h2>Achievements & Awards</h2>
+<h3 class="section-title">Achievements & Awards</h3>
 
-<div class="grid">
-
-<div class="card"><img src="images/award1.jpg" onclick="openImage(this.src)"><p> </p></div>
-<div class="card"><img src="images/award2.jpg" onclick="openImage(this.src)"><p> </p></div>
-<div class="card"><img src="images/award3.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award4.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award5.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award7.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award8.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award9.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award22.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award21.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award28.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award32.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award37.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award38.jpg" onclick="openImage(this.src)"><p></p></div>
-
+<div class="grid gallery">
+<img src="images/award1.jpg" onclick="openImage(this.src)">
+<img src="images/award2.jpg" onclick="openImage(this.src)">
+<img src="images/award3.jpg" onclick="openImage(this.src)">
+<img src="images/award4.jpg" onclick="openImage(this.src)">
+<img src="images/award5.jpg" onclick="openImage(this.src)">
+<img src="images/award6.jpg" onclick="openImage(this.src)">
+<img src="images/award7.jpg" onclick="openImage(this.src)">
+<img src="images/award8.jpg" onclick="openImage(this.src)">
+<img src="images/award9.jpg" onclick="openImage(this.src)">
 </div>
+
 </section>
 
-<section id="projects">
-<h2>Creative Works</h2>
-<div class="grid">
-
-<div class="card">
-<h3>Short Film</h3>
-<a href="https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view" target="_blank">View</a>
-</div>
-
-<div class="card">
-<h3>Novel</h3>
-<a href="https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view" target="_blank">Read</a>
-</div>
-
-</div>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<div class="card">
-📍 Giza, Egypt<br>
-📞 +201115002997<br>
-✉ Khalil.aayousef@gmail.com
-</div>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<h3 class="section-title">Contact</h3>
+<p>📍 Giza, Egypt</p>
+<p>📞 +201115002997</p>
+<p>✉ Khalil.aayousef@gmail.com</p>
 </section>
 
 <footer>
 © 2026 Khalil Ayman
 </footer>
 
+<!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeImage()">
 <img id="lightbox-img">
 </div>
@@ -185,7 +251,6 @@ function openImage(src){
 document.getElementById("lightbox").style.display="flex";
 document.getElementById("lightbox-img").src=src;
 }
-
 function closeImage(){
 document.getElementById("lightbox").style.display="none";
 }
