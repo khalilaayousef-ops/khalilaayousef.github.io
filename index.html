@@ -33,13 +33,6 @@ h2 { text-align:center; margin-bottom:40px; font-size:32px; }
 
 .card img { width:100%; border-radius:8px; cursor:pointer; }
 
-/* Tabs */
-.tabs{text-align:center;margin-bottom:30px;}
-.tab-btn{padding:10px 15px;margin:5px;border:none;background:#1e293b;color:white;cursor:pointer;border-radius:6px;}
-.tab-btn.active{background:#38bdf8;}
-.tab-content{display:none;}
-.tab-content.active{display:block;}
-
 .skill { margin-bottom:15px; }
 .progress { background:#334155; height:8px; border-radius:5px; }
 .progress div { background:#38bdf8; height:8px; border-radius:5px; }
@@ -78,10 +71,40 @@ border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:999;
 }
 
 .whatsapp img{
 width:28px;
+}
+
+/* ✅ التابس فقط (الإضافة الوحيدة) */
+.tabs{
+text-align:center;
+margin-bottom:30px;
+}
+
+.tab-btn{
+padding:10px 15px;
+margin:5px;
+border:none;
+background:#1e293b;
+color:white;
+cursor:pointer;
+border-radius:6px;
+}
+
+.tab-btn.active{
+background:#38bdf8;
+}
+
+.tab-content{
+display:none;
+}
+
+.tab-content.active{
+display:block;
 }
 </style>
 </head>
@@ -95,6 +118,7 @@ width:28px;
 
 <a class="btn" href="#projects">View My Work</a>
 <a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
+
 </header>
 
 <nav>
@@ -121,9 +145,9 @@ width:28px;
 <section id="education">
 <h2>Education</h2>
 <div class="grid">
-<div class="card">Bachelor of Commerce – Tanta University</div>
-<div class="card">Faculty of Arts – Helwan University</div>
-<div class="card">Arab School of Cinema – Cairo</div>
+<div class="card">Bachelor of Commerce , English Section , Accounting Department – Tanta University</div>
+<div class="card">Faculty of Arts, Department of Theatre Arts, Acting and Directing Division, Helwan University</div>
+<div class="card">The Arab School of Cinema at the Higher Institute of Cinema, Cairo.</div>
 </div>
 </section>
 
@@ -133,75 +157,43 @@ width:28px;
 
 <div class="card">
 <h3>Computer Programs</h3>
-<div class="skill">Word<div class="progress"><div style="width:80%"></div></div></div>
-<div class="skill">Excel<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Microsoft Word<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Microsoft Excel<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Microsoft Powerpoint<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Microsoft Powerpoint<div class="progress"><div style="width:80%"></div></div></div>
 <div class="skill">SQL<div class="progress"><div style="width:85%"></div></div></div>
+<div class="skill">Linux<div class="progress"><div style="width:80%"></div></div></div>
 </div>
 
 <div class="card">
 <h3>Creative Tools</h3>
-<div class="skill">CapCut<div class="progress"><div style="width:95%"></div></div></div>
-<div class="skill">Canva<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">CapCutPro<div class="progress"><div style="width:95%"></div></div></div>
+<div class="skill">Canva Pro<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">InShot<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">Picsart<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">Photoroom<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">Ai Tools<div class="progress"><div style="width:90%"></div></div></div>
 </div>
 
 </div>
 </section>
 
-<!-- Achievements (رجعناه زي الأول) -->
 <section id="achievements">
 <h2>Achievements & Awards</h2>
-
 <div class="grid">
-
-<div class="card">
-<img src="images/award1.jpg" onclick="openImage(this.src)">
-<p>Achievement 1</p>
-</div>
-
-<div class="card">
-<img src="images/award2.jpg" onclick="openImage(this.src)">
-<p>Achievement 2</p>
-</div>
-
-<div class="card">
-<img src="images/award3.jpg" onclick="openImage(this.src)">
-<p>Achievement 3</p>
-</div>
-
-<div class="card">
-<img src="images/award4.jpg" onclick="openImage(this.src)">
-<p>Achievement 4</p>
-</div>
-
-<div class="card">
-<img src="images/award5.jpg" onclick="openImage(this.src)">
-<p>Achievement 5</p>
-</div>
-
-<div class="card">
-<img src="images/award6.jpg" onclick="openImage(this.src)">
-<p>Achievement 6</p>
-</div>
-
-<div class="card">
-<img src="images/award7.jpg" onclick="openImage(this.src)">
-<p>Achievement 7</p>
-</div>
-
-<div class="card">
-<img src="images/award8.jpg" onclick="openImage(this.src)">
-<p>Achievement 8</p>
-</div>
-
-<div class="card">
-<img src="images/award9.jpg" onclick="openImage(this.src)">
-<p>Achievement 9</p>
-</div>
-
+<div class="card"><img src="images/award1.jpg" onclick="openImage(this.src)"></div>
+<div class="card"><img src="images/award2.jpg" onclick="openImage(this.src)"></div>
+<div class="card"><img src="images/award3.jpg" onclick="openImage(this.src)"></div>
+<div class="card"><img src="images/award4.jpg" onclick="openImage(this.src)"></div>
+<div class="card"><img src="images/award5.jpg" onclick="openImage(this.src)"></div>
+<div class="card"><img src="images/award6.jpg" onclick="openImage(this.src)"></div>
+<div class="card"><img src="images/award7.jpg" onclick="openImage(this.src)"></div>
+<div class="card"><img src="images/award8.jpg" onclick="openImage(this.src)"></div>
+<div class="card"><img src="images/award9.jpg" onclick="openImage(this.src)"></div>
 </div>
 </section>
 
-<!-- Tabs -->
+<!-- 🔥 التابس فقط -->
 <section id="projects">
 <h2>Creative Works</h2>
 
@@ -223,39 +215,27 @@ width:28px;
 </div>
 
 <div id="cosmetics" class="tab-content">
-<div class="grid">
-<div class="card">Ceramed</div>
-</div>
+<div class="grid"><div class="card">Ceramed</div></div>
 </div>
 
 <div id="design" class="tab-content">
-<div class="grid">
-<div class="card">Mokbel Design & Architecture</div>
-</div>
+<div class="grid"><div class="card">Mokbel Design & Architecture</div></div>
 </div>
 
 <div id="shoes" class="tab-content">
-<div class="grid">
-<div class="card">Calzolaio</div>
-</div>
+<div class="grid"><div class="card">Calzolaio</div></div>
 </div>
 
 <div id="medical" class="tab-content">
-<div class="grid">
-<div class="card">Almoudawah</div>
-</div>
+<div class="grid"><div class="card">Almoudawah</div></div>
 </div>
 
 <div id="barber" class="tab-content">
-<div class="grid">
-<div class="card">Flebiny Salon</div>
-</div>
+<div class="grid"><div class="card">Flebiny Salon</div></div>
 </div>
 
 <div id="ads" class="tab-content">
-<div class="grid">
-<div class="card">Coming Soon</div>
-</div>
+<div class="grid"><div class="card">Coming Soon</div></div>
 </div>
 
 </section>
@@ -265,6 +245,7 @@ width:28px;
 <div class="card">
 📍 Giza, Egypt<br>
 📞 +201115002997<br>
+📞 +201273117296<br>
 ✉ Khalil.aayousef@gmail.com
 </div>
 </section>
@@ -286,7 +267,6 @@ function openImage(src){
 document.getElementById("lightbox").style.display="flex";
 document.getElementById("lightbox-img").src=src;
 }
-
 function closeImage(){
 document.getElementById("lightbox").style.display="none";
 }
