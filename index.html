@@ -81,6 +81,32 @@ max-height:90%;
 border-radius:10px;
 }
 </style>
+  .tabs{
+text-align:center;
+margin-bottom:30px;
+}
+
+.tab-btn{
+padding:10px 15px;
+margin:5px;
+border:none;
+background:#1e293b;
+color:white;
+cursor:pointer;
+border-radius:6px;
+}
+
+.tab-btn.active{
+background:#38bdf8;
+}
+
+.tab-content{
+display:none;
+}
+
+.tab-content.active{
+display:block;
+}
 </head>
 <a href="https://wa.me/201115002997" target="_blank" class="whatsapp"></a>
 <body>
@@ -299,6 +325,20 @@ View Work
 <img id="lightbox-img">
 </div>
 
+  function openTab(tabId){
+
+document.querySelectorAll(".tab-content").forEach(tab=>{
+tab.classList.remove("active");
+});
+
+document.querySelectorAll(".tab-btn").forEach(btn=>{
+btn.classList.remove("active");
+});
+
+document.getElementById(tabId).classList.add("active");
+
+event.target.classList.add("active");
+}
 <script>
 function openImage(src){
 document.getElementById("lightbox").style.display="flex";
