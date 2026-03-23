@@ -7,7 +7,102 @@
 <title>Khalil Ayman | Creative Portfolio</title>
 
 <style>
-  .whatsapp{
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
+body { background:#0f172a; color:white; line-height:1.6; }
+a { text-decoration:none; color:#38bdf8; }
+
+/* HEADER */
+header { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; }
+header h1 { font-size:48px; margin-bottom:10px; }
+header p { font-size:20px; color:#cbd5f5; }
+
+.btn { margin-top:15px; padding:12px 25px; background:#38bdf8; border:none; border-radius:6px; color:white; display:inline-block; }
+
+/* NAV */
+nav { background:#020617; position:sticky; top:0; z-index:1000; }
+nav ul { display:flex; justify-content:center; list-style:none; }
+nav li { margin:0 20px; }
+nav a { color:white; display:block; padding:15px; }
+nav a:hover { color:#38bdf8; }
+
+section { max-width:1100px; margin:auto; padding:80px 20px; }
+h2 { text-align:center; margin-bottom:40px; font-size:32px; }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+
+.card { background:#1e293b; padding:20px; border-radius:10px; text-align:center; transition:.3s; }
+.card:hover { transform:translateY(-5px); }
+
+.card img { width:100%; border-radius:8px; cursor:pointer; }
+
+/* TABS */
+.tabs{
+text-align:center;
+margin-bottom:30px;
+}
+
+.tab-btn{
+padding:10px 15px;
+margin:5px;
+border:none;
+background:#1e293b;
+color:white;
+cursor:pointer;
+border-radius:6px;
+transition:0.3s;
+}
+
+.tab-btn:hover{
+background:#334155;
+}
+
+.tab-btn.active{
+background:#38bdf8;
+}
+
+.tab-content{
+display:none;
+opacity:0;
+transform:translateY(20px);
+transition:0.5s;
+}
+
+.tab-content.active{
+display:block;
+opacity:1;
+transform:translateY(0);
+}
+
+/* SKILLS */
+.skill { margin-bottom:15px; }
+.progress { background:#334155; height:8px; border-radius:5px; }
+.progress div { background:#38bdf8; height:8px; border-radius:5px; }
+
+/* FOOTER */
+footer { background:#020617; text-align:center; padding:20px; }
+
+/* LIGHTBOX */
+#lightbox {
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+#lightbox img {
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* WHATSAPP */
+.whatsapp{
 position:fixed;
 bottom:25px;
 right:25px;
@@ -30,85 +125,9 @@ width:28px;
 .whatsapp:hover{
 transform:scale(1.1);
 }
-* { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
-body { background:#0f172a; color:white; line-height:1.6; }
-a { text-decoration:none; color:#38bdf8; }
-
-header { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; }
-header h1 { font-size:48px; margin-bottom:10px; }
-header p { font-size:20px; color:#cbd5f5; }
-
-.btn { margin-top:15px; padding:12px 25px; background:#38bdf8; border:none; border-radius:6px; color:white; display:inline-block; }
-
-nav { background:#020617; position:sticky; top:0; z-index:1000; }
-nav ul { display:flex; justify-content:center; list-style:none; }
-nav li { margin:0 20px; }
-nav a { color:white; display:block; padding:15px; }
-nav a:hover { color:#38bdf8; }
-
-section { max-width:1100px; margin:auto; padding:80px 20px; }
-h2 { text-align:center; margin-bottom:40px; font-size:32px; }
-
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
-
-.card { background:#1e293b; padding:20px; border-radius:10px; text-align:center; transition:.3s; }
-.card:hover { transform:translateY(-5px); }
-
-.card img { width:100%; border-radius:8px; cursor:pointer; }
-
-.skill { margin-bottom:15px; }
-.progress { background:#334155; height:8px; border-radius:5px; }
-.progress div { background:#38bdf8; height:8px; border-radius:5px; }
-
-footer { background:#020617; text-align:center; padding:20px; }
-
-#lightbox {
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:2000;
-}
-
-#lightbox img {
-max-width:90%;
-max-height:90%;
-border-radius:10px;
-}
 </style>
-  .tabs{
-text-align:center;
-margin-bottom:30px;
-}
-
-.tab-btn{
-padding:10px 15px;
-margin:5px;
-border:none;
-background:#1e293b;
-color:white;
-cursor:pointer;
-border-radius:6px;
-}
-
-.tab-btn.active{
-background:#38bdf8;
-}
-
-.tab-content{
-display:none;
-}
-
-.tab-content.active{
-display:block;
-}
 </head>
-<a href="https://wa.me/201115002997" target="_blank" class="whatsapp"></a>
+
 <body>
 
 <header>
@@ -118,7 +137,6 @@ display:block;
 
 <a class="btn" href="#projects">View My Work</a>
 <a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
-
 </header>
 
 <nav>
@@ -127,93 +145,8 @@ display:block;
 <li><a href="#education">Education</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#achievements">Achievements</a></li>
-<section id="projects">
-<h2>Creative Works</h2>
-
-<!-- Tabs -->
-<div class="tabs">
-<button class="tab-btn active" onclick="openTab('rest')">Restaurants & Coffee</button>
-<button class="tab-btn" onclick="openTab('cosmetics')">Cosmetics</button>
-<button class="tab-btn" onclick="openTab('design')">Design & Architecture</button>
-<button class="tab-btn" onclick="openTab('shoes')">Shoes</button>
-<button class="tab-btn" onclick="openTab('medical')">Medical</button>
-<button class="tab-btn" onclick="openTab('barber')">Barbershops</button>
-<button class="tab-btn" onclick="openTab('ads')">Advertisements</button>
-</div>
-
-<!-- CONTENT -->
-
-<div id="rest" class="tab-content active">
-<div class="grid">
-<div class="card">
-<h3>Hi Risk</h3>
-<a href="#" target="_blank">View Work</a>
-</div>
-
-<div class="card">
-<h3>Hameed</h3>
-<a href="#" target="_blank">View Work</a>
-</div>
-</div>
-</div>
-
-<div id="cosmetics" class="tab-content">
-<div class="grid">
-<div class="card">
-<h3>Ceramed</h3>
-<a href="#" target="_blank">View Work</a>
-</div>
-</div>
-</div>
-
-<div id="design" class="tab-content">
-<div class="grid">
-<div class="card">
-<h3>Mokbel Design & Architecture</h3>
-<a href="#" target="_blank">View Work</a>
-</div>
-</div>
-</div>
-
-<div id="shoes" class="tab-content">
-<div class="grid">
-<div class="card">
-<h3>Calzolaio</h3>
-<a href="#" target="_blank">View Work</a>
-</div>
-</div>
-</div>
-
-<div id="medical" class="tab-content">
-<div class="grid">
-<div class="card">
-<h3>Almoudawah</h3>
-<a href="#" target="_blank">View Work</a>
-</div>
-</div>
-</div>
-
-<div id="barber" class="tab-content">
-<div class="grid">
-<div class="card">
-<h3>Flebiny Salon</h3>
-<a href="https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G" target="_blank">
-View Work
-</a>
-</div>
-</div>
-</div>
-
-<div id="ads" class="tab-content">
-<div class="grid">
-<div class="card">
-<h3>Advertisements Work</h3>
-<p>Coming Soon</p>
-</div>
-</div>
-</div>
-
-</section><li><a href="#contact">Contact</a></li>
+<li><a href="#projects">Works</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
@@ -223,87 +156,94 @@ View Work
 <div class="card">Content Creator</div>
 <div class="card">Author</div>
 <div class="card">Classical Poet</div>
-  <div class="card">Actor</div>
-
+<div class="card">Actor</div>
 </div>
 </section>
 
 <section id="education">
 <h2>Education</h2>
 <div class="grid">
-<div class="card">Bachelor of Commerce , English Section , Accounting Department – Tanta University</div>
-<div class="card">  Faculty of Arts, Department of Theatre Arts, Acting and Directing Division, Helwan University</div>
-<div class="card"> The Arab School of Cinema at the Higher Institute of Cinema, Cairo.</div>
+<div class="card">Bachelor of Commerce – Tanta University</div>
+<div class="card">Faculty of Arts – Helwan University</div>
+<div class="card">Arab School of Cinema – Cairo</div>
 </div>
 </section>
 
 <section id="skills">
 <h2>Skills</h2>
 <div class="grid">
-
 <div class="card">
 <h3>Computer Programs</h3>
-<div class="skill">Microsoft Word<div class="progress"><div style="width:80%"></div></div></div>
-<div class="skill">Microsoft Excel<div class="progress"><div style="width:80%"></div></div></div>
-<div class="skill">Microsoft Powerpoint<div class="progress"><div style="width:80%"></div></div></div>
-<div class="skill">Microsoft Powerpoint<div class="progress"><div style="width:80%"></div></div></div>
-  <div class="skill">SQL<div class="progress"><div style="width:85%"></div></div></div>
-<div class="skill">Linux<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Word<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Excel<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">SQL<div class="progress"><div style="width:85%"></div></div></div>
 </div>
 
 <div class="card">
 <h3>Creative Tools</h3>
-<div class="skill">CapCutPro<div class="progress"><div style="width:95%"></div></div></div>
-<div class="skill">Canva Pro<div class="progress"><div style="width:90%"></div></div></div>
-<div class="skill">InShot<div class="progress"><div style="width:90%"></div></div></div>
-<div class="skill">Picsart<div class="progress"><div style="width:90%"></div></div></div>
-<div class="skill">Photoroom<div class="progress"><div style="width:90%"></div></div></div>
-<div class="skill">Ai Tools<div class="progress"><div style="width:90%"></div></div></div>
-
+<div class="skill">CapCut<div class="progress"><div style="width:95%"></div></div></div>
+<div class="skill">Canva<div class="progress"><div style="width:90%"></div></div></div>
 </div>
-
 </div>
 </section>
 
-<section id="achievements">
-<h2>Achievements & Awards</h2>
-
-<div class="grid">
-<div class="card"><img src="images/award1.jpg" onclick="openImage(this.src)"><p> </p></div>
-<div class="card"><img src="images/award2.jpg" onclick="openImage(this.src)"><p> </p></div>
-<div class="card"><img src="images/award3.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award4.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award5.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award6.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award7.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award8.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award9.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award22.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award21.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award25.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award28.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award32.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award37.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award38.jpg" onclick="openImage(this.src)"><p></p></div>
-<div class="card"><img src="images/award29.jpg" onclick="openImage(this.src)"><p></p></div>
-</div>
-</section>
-
+<!-- 💣 TABS SECTION -->
 <section id="projects">
 <h2>Creative Works</h2>
+
+<div class="tabs">
+<button class="tab-btn active" onclick="openTab(event,'rest')">Restaurants</button>
+<button class="tab-btn" onclick="openTab(event,'cosmetics')">Cosmetics</button>
+<button class="tab-btn" onclick="openTab(event,'design')">Design</button>
+<button class="tab-btn" onclick="openTab(event,'shoes')">Shoes</button>
+<button class="tab-btn" onclick="openTab(event,'medical')">Medical</button>
+<button class="tab-btn" onclick="openTab(event,'barber')">Barber</button>
+<button class="tab-btn" onclick="openTab(event,'ads')">Ads</button>
+</div>
+
+<div id="rest" class="tab-content active">
 <div class="grid">
-
-<div class="card">
-<h3>Short Film</h3>
-<a href="https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view" target="_blank">View</a>
+<div class="card">Hi Risk</div>
+<div class="card">Hameed</div>
+</div>
 </div>
 
-<div class="card">
-<h3>Novel</h3>
-<a href="https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view" target="_blank">Read</a>
+<div id="cosmetics" class="tab-content">
+<div class="grid">
+<div class="card">Ceramed</div>
+</div>
 </div>
 
+<div id="design" class="tab-content">
+<div class="grid">
+<div class="card">Mokbel</div>
 </div>
+</div>
+
+<div id="shoes" class="tab-content">
+<div class="grid">
+<div class="card">Calzolaio</div>
+</div>
+</div>
+
+<div id="medical" class="tab-content">
+<div class="grid">
+<div class="card">Almoudawah</div>
+</div>
+</div>
+
+<div id="barber" class="tab-content">
+<div class="grid">
+<div class="card">Flebiny Salon</div>
+</div>
+</div>
+
+<div id="ads" class="tab-content">
+<div class="grid">
+<div class="card">Coming Soon</div>
+</div>
+</div>
+
 </section>
 
 <section id="contact">
@@ -311,8 +251,6 @@ View Work
 <div class="card">
 📍 Giza, Egypt<br>
 📞 +201115002997<br>
-  📞 +201273117296<br>
-  
 ✉ Khalil.aayousef@gmail.com
 </div>
 </section>
@@ -321,12 +259,13 @@ View Work
 © 2026 Khalil Ayman
 </footer>
 
-<div id="lightbox" onclick="closeImage()">
-<img id="lightbox-img">
-</div>
+<!-- WhatsApp -->
+<a href="https://wa.me/201115002997" target="_blank" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
 
-  function openTab(tabId){
-
+<script>
+function openTab(evt, tabId){
 document.querySelectorAll(".tab-content").forEach(tab=>{
 tab.classList.remove("active");
 });
@@ -336,24 +275,9 @@ btn.classList.remove("active");
 });
 
 document.getElementById(tabId).classList.add("active");
-
-event.target.classList.add("active");
-}
-<script>
-function openImage(src){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightbox-img").src=src;
-}
-
-function closeImage(){
-document.getElementById("lightbox").style.display="none";
+evt.currentTarget.classList.add("active");
 }
 </script>
 
-<a href="https://wa.me/201115002997?text=Hello%20Khalil,%20I%20saw%20your%20portfolio"
-target="_blank" class="whatsapp">
-
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-
-</a></body>
+</body>
 </html>
