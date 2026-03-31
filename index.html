@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khalil Ayman | Creative Portfolio</title>
+<title>Khalil Ayman | Portfolio</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
@@ -11,7 +11,8 @@ body{background:#0f172a;color:white;}
 a{text-decoration:none;color:#38bdf8;}
 
 header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
-.btn{margin:10px;padding:10px 20px;background:#38bdf8;color:white;border-radius:6px;}
+header h1{font-size:40px;}
+.btn{margin:10px;padding:10px 20px;background:#38bdf8;border-radius:6px;color:white;}
 
 nav{background:#020617;position:sticky;top:0;}
 nav ul{display:flex;justify-content:center;list-style:none;}
@@ -26,6 +27,7 @@ section{max-width:1100px;margin:auto;padding:60px 20px;}
 .tabs{text-align:center;margin-bottom:20px;}
 .tab-btn{padding:10px;margin:5px;background:#1e293b;color:white;border:none;cursor:pointer;}
 .tab-btn.active{background:#38bdf8;}
+
 .tab-content{display:none;}
 .tab-content.active{display:block;}
 
@@ -99,7 +101,7 @@ section{max-width:1100px;margin:auto;padding:60px 20px;}
 
 </section>
 
-<!-- POPUP -->
+<!-- Popup -->
 <div id="brandPopup" class="popup" onclick="closePopup()">
 <div class="popup-content" onclick="event.stopPropagation()">
 <h2 id="brandTitle"></h2>
@@ -109,10 +111,10 @@ section{max-width:1100px;margin:auto;padding:60px 20px;}
 </div>
 
 <script>
-function openTab(evt, tabId){
+function openTab(evt, tab){
 document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
 document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
-document.getElementById(tabId).classList.add("active");
+document.getElementById(tab).classList.add("active");
 evt.currentTarget.classList.add("active");
 }
 
@@ -120,25 +122,32 @@ function openBrand(brand){
 
 const data={
 
+hirisk:{title:"Hi Risk",desc:"Content creation for restaurant branding.",links:[]},
+hameed:{title:"Hameed",desc:"Food content creation.",links:[]},
+ceramed:{title:"Ceramed",desc:"Cosmetics content creation.",links:[]},
+mokbel:{title:"Mokbel Design",desc:"Architecture content.",links:[]},
+calzolaio:{title:"Calzolaio",desc:"Brand storytelling.",links:[]},
+almoudawah:{title:"Almoudawah",desc:"Medical content.",links:[]},
+
 flebiny:{
 title:"Flebiny Salon",
-desc:"Premium content reflecting style and high-end branding.",
+desc:"Premium barber content.",
 links:[
 {title:"Work",url:"https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G"},
 {title:"Facebook",url:"https://www.facebook.com/share/1EzSyaTWBh/"},
-{title:"Instagram",url:"https://www.instagram.com/flebiny_salon?igsh=bDcxeXkybWJtazdk"},
-{title:"TikTok",url:"https://www.tiktok.com/@flebinysalon?_r=1&_t=ZS-959HtXzSg9g"}
+{title:"Instagram",url:"https://www.instagram.com/flebiny_salon"},
+{title:"TikTok",url:"https://www.tiktok.com/@flebinysalon"}
 ]
 },
 
 ads:{
 title:"Advertisements",
-desc:"Creative campaigns and storytelling.",
+desc:"Creative campaigns.",
 links:[
 {title:"Christmas",url:"https://vt.tiktok.com/ZSHY1pSfk/"},
-{title:"Novels",url:"https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view?usp=drivesdk"},
-{title:"Halan",url:"https://drive.google.com/file/d/16WOXSdBURBaNYtBwVX0eapmpQwrLS7IQ/view?usp=drivesdk"},
-{title:"Vlog",url:"https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view?usp=drivesdk"}
+{title:"Novels",url:"https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view"},
+{title:"Halan",url:"https://drive.google.com/file/d/16WOXSdBURBaNYtBwVX0eapmpQwrLS7IQ/view"},
+{title:"Vlog",url:"https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view"}
 ]
 }
 
@@ -152,8 +161,8 @@ let html="";
 item.links.forEach(l=>{
 html+=`<a href="${l.url}" target="_blank" class="btn">${l.title}</a><br>`;
 });
-document.getElementById("brandLinks").innerHTML=html;
 
+document.getElementById("brandLinks").innerHTML=html;
 document.getElementById("brandPopup").style.display="flex";
 }
 
