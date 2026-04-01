@@ -29,7 +29,7 @@ h2 { text-align:center; margin-bottom:40px; font-size:32px; }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
 
 .card { background:#1e293b; padding:20px; border-radius:10px; text-align:center; transition:.3s; }
-.card:hover { transform:translateY(-5px); }
+.card:hover { transform:translateY(-5px); cursor:pointer; }
 
 .card img { width:100%; border-radius:8px; cursor:pointer; }
 
@@ -58,8 +58,15 @@ max-height:90%;
 border-radius:10px;
 }
 
+/* Tabs */
+.tabs{text-align:center;margin-bottom:30px;}
+.tab-btn{padding:10px 15px;margin:5px;border:none;background:#1e293b;color:white;cursor:pointer;border-radius:6px;}
+.tab-btn.active{background:#38bdf8;}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+
 /* Popup */
-#brandPopup{
+.popup{
 position:fixed;
 top:0;
 left:0;
@@ -71,13 +78,14 @@ justify-content:center;
 align-items:center;
 z-index:3000;
 }
-#brandPopup .content{
+
+.popup-content{
 background:#1e293b;
 padding:25px;
 border-radius:10px;
-text-align:center;
-max-width:500px;
 width:90%;
+max-width:500px;
+text-align:center;
 }
 </style>
 </head>
@@ -104,116 +112,214 @@ width:90%;
 </ul>
 </nav>
 
+<section id="about">
+<h2>Career Highlights</h2>
+<div class="grid">
+<div class="card">Content Creator</div>
+<div class="card">Author</div>
+<div class="card">Classical Poet</div>
+<div class="card">Actor</div>
+</div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+<div class="card">Bachelor of Commerce , English Section , Accounting Department – Tanta University</div>
+<div class="card">Faculty of Arts, Department of Theatre Arts, Acting and Directing Division, Helwan University</div>
+<div class="card">The Arab School of Cinema at the Higher Institute of Cinema, Cairo.</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Computer Programs</h3>
+<div class="skill">Microsoft Word<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Microsoft Excel<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Microsoft Powerpoint<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">Microsoft Powerpoint<div class="progress"><div style="width:80%"></div></div></div>
+<div class="skill">SQL<div class="progress"><div style="width:85%"></div></div></div>
+<div class="skill">Linux<div class="progress"><div style="width:80%"></div></div></div>
+</div>
+
+<div class="card">
+<h3>Creative Tools</h3>
+<div class="skill">CapCutPro<div class="progress"><div style="width:95%"></div></div></div>
+<div class="skill">Canva Pro<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">InShot<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">Picsart<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">Photoroom<div class="progress"><div style="width:90%"></div></div></div>
+<div class="skill">Ai Tools<div class="progress"><div style="width:90%"></div></div></div>
+</div>
+
+</div>
+</section>
+
+<section id="achievements">
+<h2>Achievements & Awards</h2>
+
+<div class="grid">
+<div class="card"><img src="images/award1.jpg" onclick="openImage(this.src)"><p> </p></div>
+<div class="card"><img src="images/award2.jpg" onclick="openImage(this.src)"><p> </p></div>
+<div class="card"><img src="images/award3.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award4.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award5.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award6.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award7.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award8.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award9.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award22.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award21.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award25.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award28.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award32.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award37.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award38.jpg" onclick="openImage(this.src)"><p></p></div>
+<div class="card"><img src="images/award29.jpg" onclick="openImage(this.src)"><p></p></div>
+</div>
+</section>
+
+
 <section id="projects">
 <h2>Creative Works</h2>
 
+<div class="tabs">
+<button class="tab-btn active" onclick="openTab(event,'rest')">Restaurants</button>
+<button class="tab-btn" onclick="openTab(event,'cosmetics')">Cosmetics</button>
+<button class="tab-btn" onclick="openTab(event,'design')">Design</button>
+<button class="tab-btn" onclick="openTab(event,'shoes')">Shoes</button>
+<button class="tab-btn" onclick="openTab(event,'medical')">Medical</button>
+<button class="tab-btn" onclick="openTab(event,'barber')">Barber</button>
+<button class="tab-btn" onclick="openTab(event,'ads')">Ads</button>
+</div>
+
+<div id="rest" class="tab-content active">
 <div class="grid">
 <div class="card" onclick="openBrand('hirisk')">Hi Risk</div>
-<div class="card" onclick="openBrand('ceramed')">Ceramed</div>
 <div class="card" onclick="openBrand('hameed')">Hameed</div>
-<div class="card" onclick="openBrand('mokbel')">Mokbel Design</div>
-<div class="card" onclick="openBrand('calzolaio')">Calzolaio</div>
-<div class="card" onclick="openBrand('almoudawah')">Almoudawah</div>
-<div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div>
-<div class="card" onclick="openBrand('ads')">Advertisements</div>
+</div>
+</div>
+
+<div id="cosmetics" class="tab-content">
+<div class="grid"><div class="card" onclick="openBrand('ceramed')">Ceramed</div></div>
+</div>
+
+<div id="design" class="tab-content">
+<div class="grid"><div class="card" onclick="openBrand('mokbel')">Mokbel Design & Architecture</div></div>
+</div>
+
+<div id="shoes" class="tab-content">
+<div class="grid"><div class="card" onclick="openBrand('calzolaio')">Calzolaio</div></div>
+</div>
+
+<div id="medical" class="tab-content">
+<div class="grid"><div class="card" onclick="openBrand('almoudawah')">Almoudawah</div></div>
+</div>
+
+<div id="barber" class="tab-content">
+<div class="grid"><div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div></div>
+</div>
+
+<div id="ads" class="tab-content">
+<div class="grid"><div class="card">Coming Soon</div></div>
 </div>
 
 </section>
 
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+📍 Giza, Egypt<br>
+📞 +201115002997<br>
+📞 +201273117296<br>
+✉ Khalil.aayousef@gmail.com
+</div>
+</section>
+
+<footer>
+© 2026 Khalil Ayman
+</footer>
+
+<div id="lightbox" onclick="closeImage()">
+<img id="lightbox-img">
+</div>
+
 <!-- Popup -->
-<div id="brandPopup" onclick="closePopup()">
-<div class="content" onclick="event.stopPropagation()">
+<div id="brandPopup" class="popup" onclick="closePopup()">
+<div class="popup-content" onclick="event.stopPropagation()">
 <h2 id="brandTitle"></h2>
-<p id="brandDesc"></p>
+<p id="brandDesc" style="margin:10px 0;color:#cbd5f5;"></p>
 <div id="brandLinks"></div>
 </div>
 </div>
 
 <script>
+function openImage(src){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=src;
+}
+function closeImage(){
+document.getElementById("lightbox").style.display="none";
+}
+
+function openTab(evt, tabId){
+document.querySelectorAll(".tab-content").forEach(tab=>tab.classList.remove("active"));
+document.querySelectorAll(".tab-btn").forEach(btn=>btn.classList.remove("active"));
+document.getElementById(tabId).classList.add("active");
+evt.currentTarget.classList.add("active");
+}
+
 function openBrand(brand){
 
 const data={
 
 hirisk:{
 title:"Hi Risk",
-desc:"Restaurant & cafe in Tanta.",
-links:[
-{title:"Instagram",url:"https://www.instagram.com/hiriskcafe"},
-{title:"TikTok",url:"https://www.tiktok.com/@hi_risk1"},
-{title:"Facebook",url:"https://www.facebook.com"}
-]
+desc:"Restaurant and cafe in Tanta, Gharbia Governorate",
+links:[{title:"Facebook",url:"https://www.facebook.com"}]
 },
 
 ceramed:{
 title:"Ceramed",
-desc:"Cosmetics shop.",
+desc:"Cosmetics shop",
 links:[
+{title:"Facebook",url:"https://www.facebook.com"},
 {title:"Instagram",url:"https://www.instagram.com/ceramed.pharma"},
-{title:"TikTok",url:"https://www.tiktok.com/@ceramed.pharma"},
-{title:"Facebook",url:"https://www.facebook.com"}
+{title:"TikTok",url:"https://www.tiktok.com/@ceramed.pharma"}
 ]
 },
 
 hameed:{
 title:"Hameed",
-desc:"Restaurant content.",
-links:[
-{title:"Instagram",url:"https://www.instagram.com/hameedegypt"},
-{title:"TikTok",url:"https://www.tiktok.com/@hameedeg"},
-{title:"Facebook",url:"https://www.facebook.com"}
-]
+desc:"مطعم بالقاهرة",
+links:[{title:"Facebook",url:"https://www.facebook.com"}]
 },
 
 mokbel:{
 title:"Mokbel Design & Architecture",
-desc:"Architecture content.",
-links:[
-{title:"Instagram",url:"https://www.instagram.com/mokbeldesignco"},
-{title:"TikTok",url:"https://www.tiktok.com/@mokbel.designco"},
-{title:"Facebook",url:"https://www.facebook.com"}
-]
+desc:"تشطيبات عربي / English finishing & design",
+links:[{title:"Facebook",url:"https://www.facebook.com"}]
 },
 
 calzolaio:{
 title:"Calzolaio",
-desc:"Italian storytelling.",
-links:[
-{title:"Instagram",url:"https://www.instagram.com/calzolaioegypt"},
-{title:"TikTok",url:"https://www.tiktok.com/@calzolaioegypt"},
-{title:"Facebook",url:"https://www.facebook.com"}
-]
+desc:"Content creator for products with Italian branding identity",
+links:[{title:"Facebook",url:"https://www.facebook.com"}]
 },
 
 almoudawah:{
 title:"Almoudawah Center",
-desc:"Physiotherapy & rehab.",
-links:[
-{title:"Instagram",url:"https://www.instagram.com/almoudawah"},
-{title:"TikTok",url:"https://www.tiktok.com/@almoudawah11"},
-{title:"Facebook",url:"https://www.facebook.com"}
-]
+desc:"Cupping therapy, physiotherapy, rehabilitation services - Saudi Arabia",
+links:[{title:"Instagram",url:"https://www.instagram.com/almoudawah"}]
 },
 
 flebiny:{
 title:"Flebiny Salon",
-desc:"Premium barber content.",
-links:[
-{title:"Work",url:"https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G"},
-{title:"Facebook",url:"https://www.facebook.com/share/1EzSyaTWBh/"},
-{title:"Instagram",url:"https://www.instagram.com/flebiny_salon"},
-{title:"TikTok",url:"https://www.tiktok.com/@flebinysalon"}
-]
-},
-
-ads:{
-title:"Advertisements",
-desc:"Creative campaigns.",
-links:[
-{title:"Christmas 🎄",url:"https://vt.tiktok.com/ZSHY1pSfk/"},
-{title:"Novels",url:"https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view"},
-{title:"Halan",url:"https://drive.google.com/file/d/16WOXSdBURBaNYtBwVX0eapmpQwrLS7IQ/view"},
-{title:"Vlog",url:"https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view"}
-]
+desc:"Professional barbershop for artists and celebrities",
+links:[{title:"Works",url:"https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G"}]
 }
 
 };
@@ -223,12 +329,13 @@ let item=data[brand];
 document.getElementById("brandTitle").innerText=item.title;
 document.getElementById("brandDesc").innerText=item.desc;
 
-let html="";
-item.links.forEach(l=>{
-html+=`<a href="${l.url}" target="_blank" class="btn" style="display:block;margin:5px 0;">${l.title}</a>`;
+let linksHTML="";
+item.links.forEach(link=>{
+linksHTML+=`<a href="${link.url}" target="_blank" class="btn" style="display:block;margin:5px 0;">${link.title}</a>`;
 });
 
-document.getElementById("brandLinks").innerHTML=html;
+document.getElementById("brandLinks").innerHTML=linksHTML;
+
 document.getElementById("brandPopup").style.display="flex";
 }
 
