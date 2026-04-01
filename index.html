@@ -1,123 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khalil Ayman | Creative Portfolio</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-body{background:#0f172a;color:white;}
-a{text-decoration:none;color:#38bdf8;}
-
-header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
-header h1{font-size:42px;}
-header p{color:#cbd5f5;}
-
-.btn{margin:10px;padding:10px 20px;background:#38bdf8;border-radius:6px;color:white;display:inline-block;}
-
-nav{background:#020617;position:sticky;top:0;}
-nav ul{display:flex;justify-content:center;list-style:none;}
-nav li{margin:0 15px;}
-nav a{color:white;padding:15px;display:block;}
-
-section{max-width:1100px;margin:auto;padding:60px 20px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-
-.card{background:#1e293b;padding:20px;border-radius:10px;text-align:center;cursor:pointer;}
-
-.tabs{text-align:center;margin-bottom:20px;}
-.tab-btn{padding:10px;margin:5px;background:#1e293b;color:white;border:none;cursor:pointer;}
-.tab-btn.active{background:#38bdf8;}
-
-.tab-content{display:none;}
-.tab-content.active{display:block;}
-
-.popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:none;justify-content:center;align-items:center;}
-.popup-content{background:#1e293b;padding:20px;border-radius:10px;text-align:center;width:90%;max-width:400px;}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>Khalil Ayman Abdelaziz</h1>
-<p>Creative Content Creator | Freelancer</p>
-</header>
-
-<section id="projects">
-<h2 style="text-align:center;margin-bottom:20px;">Creative Works</h2>
-
-<div class="tabs">
-<button class="tab-btn active" onclick="openTab(event,'rest')">Restaurants</button>
-<button class="tab-btn" onclick="openTab(event,'cosmetics')">Cosmetics</button>
-<button class="tab-btn" onclick="openTab(event,'design')">Design</button>
-<button class="tab-btn" onclick="openTab(event,'shoes')">Shoes</button>
-<button class="tab-btn" onclick="openTab(event,'medical')">Medical</button>
-<button class="tab-btn" onclick="openTab(event,'barber')">Barber</button>
-<button class="tab-btn" onclick="openTab(event,'ads')">Ads</button>
-</div>
-
-<div id="rest" class="tab-content active">
-<div class="grid">
-<div class="card" onclick="openBrand('hirisk')">Hi Risk</div>
-<div class="card" onclick="openBrand('hameed')">Hameed</div>
-</div>
-</div>
-
-<div id="cosmetics" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('ceramed')">Ceramed</div></div>
-</div>
-
-<div id="design" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('mokbel')">Mokbel Design</div></div>
-</div>
-
-<div id="shoes" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('calzolaio')">Calzolaio</div></div>
-</div>
-
-<div id="medical" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('almoudawah')">Almoudawah</div></div>
-</div>
-
-<div id="barber" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div></div>
-</div>
-
-<div id="ads" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('ads')">Advertisements</div></div>
-</div>
-
-</section>
-
-<!-- Popup -->
-<div id="brandPopup" class="popup" onclick="closePopup()">
-<div class="popup-content" onclick="event.stopPropagation()">
-<h2 id="brandTitle"></h2>
-<p id="brandDesc"></p>
-<div id="brandLinks"></div>
-</div>
-</div>
-
 <script>
-function openTab(evt, tab){
-document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
-document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
-document.getElementById(tab).classList.add("active");
-evt.currentTarget.classList.add("active");
-}
-
 function openBrand(brand){
 
 const data={
 
-hirisk:{title:"Hi Risk",desc:"Restaurant content creation.",links:[]},
-hameed:{title:"Hameed",desc:"Food content creation.",links:[]},
-ceramed:{title:"Ceramed",desc:"Cosmetics content.",links:[]},
-mokbel:{title:"Mokbel Design",desc:"Architecture content.",links:[]},
-calzolaio:{title:"Calzolaio",desc:"Brand storytelling.",links:[]},
-almoudawah:{title:"Almoudawah",desc:"Medical content.",links:[]},
+hirisk:{
+title:"Hi Risk",
+desc:"Restaurant & cafe in Tanta.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/hiriskcafe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="},
+{title:"TikTok",url:"https://www.tiktok.com/@hi_risk1?is_from_webapp=1&sender_device=pc"},
+{title:"Facebook",url:"https://www.facebook.com"}
+]
+},
+
+ceramed:{
+title:"Ceramed",
+desc:"Cosmetics shop.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/ceramed.pharma"},
+{title:"TikTok",url:"https://www.tiktok.com/@ceramed.pharma"},
+{title:"Facebook",url:"https://www.facebook.com"}
+]
+},
+
+hameed:{
+title:"Hameed",
+desc:"Restaurant content.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/hameedegypt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="},
+{title:"TikTok",url:"https://www.tiktok.com/@hameedeg?is_from_webapp=1&sender_device=pc"},
+{title:"Facebook",url:"https://www.facebook.com"}
+]
+},
+
+mokbel:{
+title:"Mokbel Design & Architecture",
+desc:"Architecture content creation.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/mokbeldesignco?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="},
+{title:"TikTok",url:"https://www.tiktok.com/@mokbel.designco?is_from_webapp=1&sender_device=pc"},
+{title:"Facebook",url:"https://www.facebook.com"}
+]
+},
+
+calzolaio:{
+title:"Calzolaio",
+desc:"Italian-inspired brand storytelling.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/calzolaioegypt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="},
+{title:"TikTok",url:"https://www.tiktok.com/@calzolaioegypt?is_from_webapp=1&sender_device=pc"},
+{title:"Facebook",url:"https://www.facebook.com"}
+]
+},
+
+almoudawah:{
+title:"Almoudawah Center",
+desc:"Physiotherapy & rehabilitation services.",
+links:[
+{title:"Instagram",url:"https://www.instagram.com/almoudawah"},
+{title:"TikTok",url:"https://www.tiktok.com/@almoudawah11"},
+{title:"Facebook",url:"https://www.facebook.com"}
+]
+},
 
 flebiny:{
 title:"Flebiny Salon",
@@ -134,7 +78,7 @@ ads:{
 title:"Advertisements",
 desc:"Creative campaigns.",
 links:[
-{title:"Christmas",url:"https://vt.tiktok.com/ZSHY1pSfk/"},
+{title:"Christmas 🎄",url:"https://vt.tiktok.com/ZSHY1pSfk/"},
 {title:"Novels",url:"https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view"},
 {title:"Halan",url:"https://drive.google.com/file/d/16WOXSdBURBaNYtBwVX0eapmpQwrLS7IQ/view"},
 {title:"Vlog",url:"https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view"}
@@ -150,7 +94,7 @@ document.getElementById("brandDesc").innerText=item.desc;
 
 let html="";
 item.links.forEach(l=>{
-html+=`<a href="${l.url}" target="_blank" class="btn">${l.title}</a><br>`;
+html+=`<a href="${l.url}" target="_blank" class="btn" style="display:block;margin:5px 0;">${l.title}</a>`;
 });
 
 document.getElementById("brandLinks").innerHTML=html;
@@ -161,6 +105,3 @@ function closePopup(){
 document.getElementById("brandPopup").style.display="none";
 }
 </script>
-
-</body>
-</html>
