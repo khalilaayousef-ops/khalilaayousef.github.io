@@ -181,7 +181,92 @@ text-align:center;
 <div class="card"><img src="images/award29.jpg" onclick="openImage(this.src)"><p></p></div>
 </div>
 </section>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khalil Ayman | Creative Portfolio</title>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
+body { background:#0f172a; color:white; line-height:1.6; }
+a { text-decoration:none; color:#38bdf8; }
+
+header { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; }
+header h1 { font-size:48px; margin-bottom:10px; }
+header p { font-size:20px; color:#cbd5f5; }
+
+.btn { margin-top:15px; padding:12px 25px; background:#38bdf8; border:none; border-radius:6px; color:white; display:inline-block; cursor:pointer; }
+
+nav { background:#020617; position:sticky; top:0; z-index:1000; }
+nav ul { display:flex; justify-content:center; list-style:none; }
+nav li { margin:0 20px; }
+nav a { color:white; display:block; padding:15px; }
+nav a:hover { color:#38bdf8; }
+
+section { max-width:1100px; margin:auto; padding:80px 20px; }
+h2 { text-align:center; margin-bottom:40px; font-size:32px; }
+
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+
+.card { background:#1e293b; padding:20px; border-radius:10px; text-align:center; transition:.3s; cursor:pointer; }
+.card:hover { transform:translateY(-5px); }
+
+footer { background:#020617; text-align:center; padding:20px; }
+
+/* Tabs */
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+
+/* Popup */
+#popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:3000;
+}
+.popup-box{
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+width:90%;
+max-width:500px;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Khalil Ayman Abdelaziz</h1>
+<p>Creative Content Creator | Freelancer</p>
+<p>Haram St., Giza – Egypt</p>
+
+<a class="btn" href="#projects">View My Work</a>
+<a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
+</header>
+
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#projects">Works</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- Creative Works فقط هو اللي اتعدل -->
 <section id="projects">
 <h2>Creative Works</h2>
 
@@ -364,4 +449,5 @@ document.getElementById("popup").style.display="none";
 
 </body>
 </html>
+
 
