@@ -182,18 +182,17 @@ text-align:center;
 </div>
 </section>
 
-
 <section id="projects">
 <h2>Creative Works</h2>
 
-<div class="tabs">
-<button class="tab-btn active" onclick="openTab(event,'rest')">Restaurants</button>
-<button class="tab-btn" onclick="openTab(event,'cosmetics')">Cosmetics</button>
-<button class="tab-btn" onclick="openTab(event,'design')">Design</button>
-<button class="tab-btn" onclick="openTab(event,'shoes')">Shoes</button>
-<button class="tab-btn" onclick="openTab(event,'medical')">Medical</button>
-<button class="tab-btn" onclick="openTab(event,'barber')">Barber</button>
-<button class="tab-btn" onclick="openTab(event,'ads')">Ads</button>
+<div style="text-align:center;margin-bottom:30px;">
+<button class="btn" onclick="openTab('rest')">Restaurants</button>
+<button class="btn" onclick="openTab('cosmetics')">Cosmetics</button>
+<button class="btn" onclick="openTab('design')">Design</button>
+<button class="btn" onclick="openTab('shoes')">Shoes</button>
+<button class="btn" onclick="openTab('medical')">Medical</button>
+<button class="btn" onclick="openTab('barber')">Barber</button>
+<button class="btn" onclick="openTab('ads')">Ads</button>
 </div>
 
 <div id="rest" class="tab-content active">
@@ -204,145 +203,165 @@ text-align:center;
 </div>
 
 <div id="cosmetics" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('ceramed')">Ceramed</div></div>
+<div class="grid">
+<div class="card" onclick="openBrand('ceramed')">Ceramed</div>
+</div>
 </div>
 
 <div id="design" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('mokbel')">Mokbel Design & Architecture</div></div>
+<div class="grid">
+<div class="card" onclick="openBrand('mokbel')">Mokbel Design</div>
+</div>
 </div>
 
 <div id="shoes" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('calzolaio')">Calzolaio</div></div>
+<div class="grid">
+<div class="card" onclick="openBrand('calzolaio')">Calzolaio</div>
+</div>
 </div>
 
 <div id="medical" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('almoudawah')">Almoudawah</div></div>
+<div class="grid">
+<div class="card" onclick="openBrand('almoudawah')">Almoudawah</div>
+</div>
 </div>
 
 <div id="barber" class="tab-content">
-<div class="grid"><div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div></div>
+<div class="grid">
+<div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div>
+</div>
 </div>
 
 <div id="ads" class="tab-content">
-<div class="grid"><div class="card">Coming Soon</div></div>
+<div class="grid">
+<div class="card" onclick="openBrand('ads')">Advertisements</div>
+</div>
 </div>
 
 </section>
-
-<section id="contact">
-<h2>Contact</h2>
-<div class="card">
-📍 Giza, Egypt<br>
-📞 +201115002997<br>
-📞 +201273117296<br>
-✉ Khalil.aayousef@gmail.com
-</div>
-</section>
-
-<footer>
-© 2026 Khalil Ayman
-</footer>
-
-<div id="lightbox" onclick="closeImage()">
-<img id="lightbox-img">
-</div>
 
 <!-- Popup -->
-<div id="brandPopup" class="popup" onclick="closePopup()">
-<div class="popup-content" onclick="event.stopPropagation()">
-<h2 id="brandTitle"></h2>
-<p id="brandDesc" style="margin:10px 0;color:#cbd5f5;"></p>
-<div id="brandLinks"></div>
+<div id="popup" onclick="closePopup()">
+<div class="popup-box" onclick="event.stopPropagation()">
+<h2 id="title"></h2>
+<p id="desc"></p>
+<div id="links"></div>
 </div>
 </div>
 
 <script>
-function openImage(src){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightbox-img").src=src;
-}
-function closeImage(){
-document.getElementById("lightbox").style.display="none";
+function openTab(id){
+document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
+document.getElementById(id).classList.add("active");
 }
 
-function openTab(evt, tabId){
-document.querySelectorAll(".tab-content").forEach(tab=>tab.classList.remove("active"));
-document.querySelectorAll(".tab-btn").forEach(btn=>btn.classList.remove("active"));
-document.getElementById(tabId).classList.add("active");
-evt.currentTarget.classList.add("active");
-}
-
-function openBrand(brand){
+function openBrand(b){
 
 const data={
 
 hirisk:{
 title:"Hi Risk",
-desc:"Restaurant and cafe in Tanta, Gharbia Governorate",
-links:[{title:"Facebook",url:"https://www.facebook.com"}]
+desc:"Restaurant & cafe in Tanta.",
+links:[
+["Instagram","https://www.instagram.com/hiriskcafe?utm_source=ig_web_button_share_sheet"],
+["TikTok","https://www.tiktok.com/@hi_risk1"],
+["Facebook","https://www.facebook.com"]
+]
 },
 
 ceramed:{
 title:"Ceramed",
-desc:"Cosmetics shop",
+desc:"Cosmetics shop.",
 links:[
-{title:"Facebook",url:"https://www.facebook.com"},
-{title:"Instagram",url:"https://www.instagram.com/ceramed.pharma"},
-{title:"TikTok",url:"https://www.tiktok.com/@ceramed.pharma"}
+["Instagram","https://www.instagram.com/ceramed.pharma"],
+["TikTok","https://www.tiktok.com/@ceramed.pharma"],
+["Facebook","https://www.facebook.com"]
 ]
 },
 
 hameed:{
 title:"Hameed",
-desc:"مطعم بالقاهرة",
-links:[{title:"Facebook",url:"https://www.facebook.com"}]
+desc:"Restaurant.",
+links:[
+["Instagram","https://www.instagram.com/hameedegypt"],
+["TikTok","https://www.tiktok.com/@hameedeg"],
+["Facebook","https://www.facebook.com"]
+]
 },
 
 mokbel:{
 title:"Mokbel Design & Architecture",
-desc:"تشطيبات عربي / English finishing & design",
-links:[{title:"Facebook",url:"https://www.facebook.com"}]
+desc:"Design & Architecture content.",
+links:[
+["Instagram","https://www.instagram.com/mokbeldesignco"],
+["TikTok","https://www.tiktok.com/@mokbel.designco"],
+["Facebook","https://www.facebook.com"]
+]
 },
 
 calzolaio:{
 title:"Calzolaio",
-desc:"Content creator for products with Italian branding identity",
-links:[{title:"Facebook",url:"https://www.facebook.com"}]
+desc:"Italian storytelling content.",
+links:[
+["Instagram","https://www.instagram.com/calzolaioegypt"],
+["TikTok","https://www.tiktok.com/@calzolaioegypt"],
+["Facebook","https://www.facebook.com"]
+]
 },
 
 almoudawah:{
 title:"Almoudawah Center",
-desc:"Cupping therapy, physiotherapy, rehabilitation services - Saudi Arabia",
-links:[{title:"Instagram",url:"https://www.instagram.com/almoudawah"}]
+desc:"Physiotherapy & rehabilitation.",
+links:[
+["Instagram","https://www.instagram.com/almoudawah"],
+["TikTok","https://www.tiktok.com/@almoudawah11"],
+["Facebook","https://www.facebook.com"]
+]
 },
 
 flebiny:{
 title:"Flebiny Salon",
-desc:"Professional barbershop for artists and celebrities",
-links:[{title:"Works",url:"https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G"}]
+desc:"Professional barber for celebrities.",
+links:[
+["Work","https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G"],
+["Facebook","https://www.facebook.com/share/1EzSyaTWBh/"],
+["Instagram","https://www.instagram.com/flebiny_salon"],
+["TikTok","https://www.tiktok.com/@flebinysalon"]
+]
+},
+
+ads:{
+title:"Advertisements",
+desc:"Creative campaigns.",
+links:[
+["Christmas","https://vt.tiktok.com/ZSHY1pSfk/"],
+["Novels","https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view"],
+["Halan","https://drive.google.com/file/d/16WOXSdBURBaNYtBwVX0eapmpQwrLS7IQ/view"],
+["Vlog","https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view"]
+]
 }
 
 };
 
-let item=data[brand];
+let item=data[b];
 
-document.getElementById("brandTitle").innerText=item.title;
-document.getElementById("brandDesc").innerText=item.desc;
+document.getElementById("title").innerText=item.title;
+document.getElementById("desc").innerText=item.desc;
 
-let linksHTML="";
-item.links.forEach(link=>{
-linksHTML+=`<a href="${link.url}" target="_blank" class="btn" style="display:block;margin:5px 0;">${link.title}</a>`;
+let html="";
+item.links.forEach(l=>{
+html+=`<a href="${l[1]}" target="_blank" class="btn">${l[0]}</a><br>`;
 });
 
-document.getElementById("brandLinks").innerHTML=linksHTML;
-
-document.getElementById("brandPopup").style.display="flex";
+document.getElementById("links").innerHTML=html;
+document.getElementById("popup").style.display="flex";
 }
 
 function closePopup(){
-document.getElementById("brandPopup").style.display="none";
+document.getElementById("popup").style.display="none";
 }
 </script>
 
 </body>
 </html>
+
