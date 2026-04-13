@@ -3,13 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khalil Ayman | Portfolio</title>
+<title>Khalil Ayman | Creative Portfolio</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-body{background:#020617;color:#fff;line-height:1.6;}
 
-h1,h2,h3{letter-spacing:1px;}
+body{
+background:#020617;
+color:#fff;
+line-height:1.6;
+}
+
+a{text-decoration:none;color:#38bdf8;}
 
 header{
 height:100vh;
@@ -18,19 +23,20 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(135deg,#020617,#0f172a);
 }
 
-header h1{font-size:50px;}
-header p{color:#94a3b8;margin:10px 0;}
+header h1{font-size:48px;}
+header p{color:#94a3b8;margin-top:5px;}
 
 .btn{
+margin-top:15px;
 padding:12px 25px;
 background:#38bdf8;
+border:none;
 border-radius:6px;
+color:white;
 display:inline-block;
-margin-top:10px;
-color:#fff;
+cursor:pointer;
 transition:.3s;
 }
 .btn:hover{background:#0ea5e9;}
@@ -42,25 +48,11 @@ top:0;
 z-index:1000;
 border-bottom:1px solid #1e293b;
 }
-nav ul{
-display:flex;
-justify-content:center;
-list-style:none;
-}
-nav li{margin:0 15px;}
-nav a{
-color:#fff;
-padding:15px;
-display:block;
-}
-nav a:hover{color:#38bdf8;}
+nav ul{display:flex;justify-content:center;list-style:none;}
+nav li{margin:0 20px;}
+nav a{color:white;padding:15px;display:block;}
 
-section{
-max-width:1100px;
-margin:auto;
-padding:80px 20px;
-}
-
+section{max-width:1100px;margin:auto;padding:80px 20px;}
 h2{text-align:center;margin-bottom:40px;}
 
 .grid{
@@ -72,69 +64,71 @@ gap:20px;
 .card{
 background:#0f172a;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
 text-align:center;
 transition:.3s;
-border:1px solid #1e293b;
 cursor:pointer;
+border:1px solid #1e293b;
 }
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 border-color:#38bdf8;
 }
 
-.tabs{text-align:center;margin-bottom:30px;}
-.tab-btn{
-padding:10px 15px;
-margin:5px;
-border:none;
-background:#0f172a;
-color:white;
-cursor:pointer;
-border-radius:6px;
-}
-.tab-btn.active{background:#38bdf8;}
-
+/* Tabs */
 .tab-content{display:none;}
 .tab-content.active{display:block;}
-
-footer{
-text-align:center;
-padding:20px;
-border-top:1px solid #1e293b;
-}
 
 /* Popup */
 #popup{
 position:fixed;
-top:0;left:0;
-width:100%;height:100%;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:rgba(0,0,0,0.9);
 display:none;
 justify-content:center;
 align-items:center;
 z-index:3000;
 }
+
 .popup-box{
 background:#0f172a;
 padding:25px;
-border-radius:10px;
+border-radius:12px;
 width:90%;
 max-width:500px;
 text-align:center;
+border:1px solid #1e293b;
 }
 
-/* WhatsApp */
+/* WhatsApp Button */
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:15px 18px;
+padding:15px;
 border-radius:50%;
 font-size:22px;
+cursor:pointer;
 z-index:4000;
+box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+/* WhatsApp Popup */
+#whatsappPopup{
+position:fixed;
+bottom:90px;
+right:20px;
+background:#0f172a;
+padding:20px;
+border-radius:12px;
+display:none;
+z-index:4000;
+border:1px solid #1e293b;
 }
 </style>
 </head>
@@ -154,17 +148,18 @@ z-index:4000;
 </ul>
 </nav>
 
+<!-- Creative Works -->
 <section id="projects">
 <h2>Creative Works</h2>
 
-<div class="tabs">
-<button class="tab-btn active" onclick="openTab(event,'rest')">Restaurants</button>
-<button class="tab-btn" onclick="openTab(event,'cosmetics')">Cosmetics</button>
-<button class="tab-btn" onclick="openTab(event,'design')">Design</button>
-<button class="tab-btn" onclick="openTab(event,'shoes')">Shoes</button>
-<button class="tab-btn" onclick="openTab(event,'medical')">Medical</button>
-<button class="tab-btn" onclick="openTab(event,'barber')">Barber</button>
-<button class="tab-btn" onclick="openTab(event,'ads')">Ads</button>
+<div style="text-align:center;margin-bottom:30px;">
+<button class="btn" onclick="openTab('rest')">Restaurants</button>
+<button class="btn" onclick="openTab('cosmetics')">Cosmetics</button>
+<button class="btn" onclick="openTab('design')">Design</button>
+<button class="btn" onclick="openTab('shoes')">Shoes</button>
+<button class="btn" onclick="openTab('medical')">Medical</button>
+<button class="btn" onclick="openTab('barber')">Barber</button>
+<button class="btn" onclick="openTab('ads')">Ads</button>
 </div>
 
 <div id="rest" class="tab-content active">
@@ -212,16 +207,6 @@ z-index:4000;
 
 </section>
 
-<section id="contact">
-<h2>Contact</h2>
-<div class="card">
-📞 01115002997<br>
-✉ khalil.aayousef@gmail.com
-</div>
-</section>
-
-<footer>© 2026 Khalil Ayman</footer>
-
 <!-- Popup -->
 <div id="popup" onclick="closePopup()">
 <div class="popup-box" onclick="event.stopPropagation()">
@@ -231,29 +216,91 @@ z-index:4000;
 </div>
 </div>
 
-<!-- WhatsApp -->
-<a class="whatsapp" href="https://wa.me/201115002997" target="_blank">💬</a>
+<!-- WhatsApp Button -->
+<div class="whatsapp" onclick="toggleWhatsApp()">💬</div>
+
+<div id="whatsappPopup">
+<p>Contact me on WhatsApp</p>
+<a class="btn" href="https://wa.me/201115002997" target="_blank">Chat Now</a>
+</div>
 
 <script>
-function openTab(evt,id){
+
+function openTab(id){
 document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
-document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
 document.getElementById(id).classList.add("active");
-evt.currentTarget.classList.add("active");
 }
 
 function openBrand(b){
 
 const data={
 
-hirisk:{title:"Hi Risk",desc:"Restaurant content",links:[["Instagram","https://www.instagram.com/hiriskcafe"]]},
-hameed:{title:"Hameed",desc:"Food content",links:[["Instagram","https://www.instagram.com/hameedegypt"]]},
-ceramed:{title:"Ceramed",desc:"Cosmetics content",links:[["Instagram","https://www.instagram.com/ceramed.pharma"]]},
-mokbel:{title:"Mokbel",desc:"Architecture content",links:[["Instagram","https://www.instagram.com/mokbeldesignco"]]},
-calzolaio:{title:"Calzolaio",desc:"Italian branding",links:[["Instagram","https://www.instagram.com/calzolaioegypt"]]},
-almoudawah:{title:"Almoudawah",desc:"Medical content",links:[["Instagram","https://www.instagram.com/almoudawah"]]},
-flebiny:{title:"Flebiny",desc:"Barber brand",links:[["Work","https://drive.google.com"]]},
-ads:{title:"Ads",desc:"Campaigns",links:[["Christmas","https://vt.tiktok.com"]]}
+hirisk:{
+title:"Hi Risk",
+desc:"Restaurant & cafe content.",
+links:[
+["Instagram","https://www.instagram.com/hiriskcafe"],
+["TikTok","https://www.tiktok.com/@hi_risk1"]
+]
+},
+
+ceramed:{
+title:"Ceramed",
+desc:"Cosmetics brand content.",
+links:[
+["Instagram","https://www.instagram.com/ceramed.pharma"]
+]
+},
+
+hameed:{
+title:"Hameed",
+desc:"Food content creation.",
+links:[
+["Instagram","https://www.instagram.com/hameedegypt"]
+]
+},
+
+mokbel:{
+title:"Mokbel",
+desc:"Architecture content.",
+links:[
+["Instagram","https://www.instagram.com/mokbeldesignco"]
+]
+},
+
+calzolaio:{
+title:"Calzolaio",
+desc:"Italian branding storytelling.",
+links:[
+["Instagram","https://www.instagram.com/calzolaioegypt"]
+]
+},
+
+almoudawah:{
+title:"Almoudawah",
+desc:"Medical content.",
+links:[
+["Instagram","https://www.instagram.com/almoudawah"]
+]
+},
+
+flebiny:{
+title:"Flebiny Salon",
+desc:"Premium barber content.",
+links:[
+["Work","https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G"],
+["Instagram","https://www.instagram.com/flebiny_salon"]
+]
+},
+
+ads:{
+title:"Advertisements",
+desc:"Creative campaigns.",
+links:[
+["Christmas","https://vt.tiktok.com/ZSHY1pSfk/"]
+]
+}
+
 };
 
 let item=data[b];
@@ -263,7 +310,7 @@ document.getElementById("desc").innerText=item.desc;
 
 let html="";
 item.links.forEach(l=>{
-html+=`<a class="btn" href="${l[1]}" target="_blank">${l[0]}</a><br>`;
+html+=`<a href="${l[1]}" target="_blank" class="btn">${l[0]}</a><br>`;
 });
 
 document.getElementById("links").innerHTML=html;
@@ -273,6 +320,13 @@ document.getElementById("popup").style.display="flex";
 function closePopup(){
 document.getElementById("popup").style.display="none";
 }
+
+/* WhatsApp */
+function toggleWhatsApp(){
+let box=document.getElementById("whatsappPopup");
+box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
 </script>
 
 </body>
