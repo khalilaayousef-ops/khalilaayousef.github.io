@@ -1,207 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khalil Ayman | ULTRA GOD MODE</title>
+<section id="pricing">
+<h2>Work With Me</h2>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-
-body{background:#020617;color:#fff;overflow-x:hidden}
-
-/* ===== INTRO ===== */
-#intro{
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:#020617;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-font-size:30px;
-animation:fadeOut 1s ease 2s forwards;
-}
-@keyframes fadeOut{to{opacity:0;visibility:hidden;}}
-
-/* ===== HEADER ===== */
-header{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-header h1{
-font-size:60px;
-background:linear-gradient(90deg,#38bdf8,#22c55e);
--webkit-background-clip:text;
-color:transparent;
-}
-
-.btn{
-padding:12px 25px;
-border-radius:30px;
-background:linear-gradient(90deg,#38bdf8,#22c55e);
-border:none;
-color:#fff;
-cursor:pointer;
-margin-top:15px;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-section{max-width:1100px;margin:auto;padding:80px 20px;}
-h2{text-align:center;margin-bottom:30px;}
-
-/* CARD */
-.card{
-background:#0f172a;
-padding:25px;
-border-radius:15px;
-transition:.3s;
-cursor:pointer;
-}
-.card:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px #38bdf8;
-}
-
-/* POPUP */
-#popup{
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-justify-content:center;
-align-items:center;
-}
-.popup-box{
-background:#0f172a;
-padding:25px;
-border-radius:10px;
-width:90%;
-max-width:500px;
-}
-
-/* AI CHAT */
-#ai{
-position:fixed;
-bottom:20px;
-left:20px;
-background:#0f172a;
-padding:15px;
-border-radius:10px;
-width:250px;
-}
-#ai input{
-width:100%;
-padding:10px;
-margin-top:10px;
-border:none;
-border-radius:5px;
-}
-
-/* WhatsApp */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50%;
-cursor:pointer;
-}
-</style>
-</head>
-
-<body>
-
-<div id="intro">WELCOME</div>
-
-<header>
-<h1>Khalil Ayman</h1>
-<p>Elite Creative Machine</p>
-<a class="btn" href="#services">Hire Me</a>
-</header>
-
-<!-- SERVICES -->
-<section id="services">
-<h2>Services</h2>
 <div class="grid">
-<div class="card">Content Creation</div>
-<div class="card">Video Editing</div>
-<div class="card">Branding</div>
-<div class="card">Ads Campaigns</div>
+
+<div class="card">
+<h3>Starter</h3>
+<p>Perfect for small brands</p>
+<h2>$100</h2>
+<p>• 5 Posts<br>• Basic Editing<br>• 1 Platform</p>
+<a class="btn" href="https://wa.me/201115002997?text=I want Starter Package">Start Now</a>
+</div>
+
+<div class="card">
+<h3>Professional</h3>
+<p>Most Popular 🔥</p>
+<h2>$250</h2>
+<p>• 15 Posts<br>• Reels + Ads<br>• Strategy Plan</p>
+<a class="btn" href="https://wa.me/201115002997?text=I want Professional Package">Get Started</a>
+</div>
+
+<div class="card">
+<h3>Elite</h3>
+<p>For serious brands</p>
+<h2>$500+</h2>
+<p>• Full Content Plan<br>• Ads Campaign<br>• Branding</p>
+<a class="btn" href="https://wa.me/201115002997?text=I want Elite Package">Contact Me</a>
+</div>
+
 </div>
 </section>
-
-<!-- WORK -->
-<section>
-<h2>Projects</h2>
-<div class="grid">
-<div class="card" onclick="openBrand('hirisk')">Hi Risk</div>
-<div class="card" onclick="openBrand('flebiny')">Flebiny</div>
-</div>
-</section>
-
-<!-- POPUP -->
-<div id="popup" onclick="closePopup()">
-<div class="popup-box" onclick="event.stopPropagation()">
-<h2 id="title"></h2>
-<p id="desc"></p>
-<div id="links"></div>
-</div>
-</div>
-
-<!-- AI -->
-<div id="ai">
-🤖 Ask me
-<input placeholder="Type..." onkeydown="chat(event)">
-<p id="aiRes"></p>
-</div>
-
-<!-- WhatsApp -->
-<div class="whatsapp" onclick="window.open('https://wa.me/201115002997')">💬</div>
-
-<script>
-
-/* Brands */
-function openBrand(b){
-const data={
-hirisk:{title:"Hi Risk",desc:"Boosted engagement + brand identity"},
-flebiny:{title:"Flebiny",desc:"Premium barber branding"}
-};
-
-let item=data[b];
-document.getElementById("title").innerText=item.title;
-document.getElementById("desc").innerText=item.desc;
-document.getElementById("popup").style.display="flex";
-}
-
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
-
-/* AI Fake Chat */
-function chat(e){
-if(e.key==="Enter"){
-let v=e.target.value.toLowerCase();
-let res="I can help you with content, branding & ads.";
-if(v.includes("price")) res="Contact on WhatsApp 💬";
-document.getElementById("aiRes").innerText=res;
-}
-}
-
-</script>
-
-</body>
-</html>
