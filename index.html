@@ -29,7 +29,7 @@ h2 { text-align:center; margin-bottom:40px; font-size:32px; }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
 
 .card { background:#1e293b; padding:20px; border-radius:10px; text-align:center; transition:.3s; }
-.card:hover { transform:translateY(-5px); cursor:pointer; }
+.card:hover { transform:translateY(-5px); }
 
 .card img { width:100%; border-radius:8px; cursor:pointer; }
 
@@ -39,6 +39,7 @@ h2 { text-align:center; margin-bottom:40px; font-size:32px; }
 
 footer { background:#020617; text-align:center; padding:20px; }
 
+/* Lightbox */
 #lightbox {
 position:fixed;
 top:0;
@@ -58,80 +59,56 @@ max-height:90%;
 border-radius:10px;
 }
 
-/* Tabs */
-.tabs{text-align:center;margin-bottom:30px;}
-.tab-btn{padding:10px 15px;margin:5px;border:none;background:#1e293b;color:white;cursor:pointer;border-radius:6px;}
-.tab-btn.active{background:#38bdf8;}
-.tab-content{display:none;}
-.tab-content.active{display:block;}
-
-/* Popup */
-.popup{
+/* WhatsApp */
+.whatsapp{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:3000;
-}
-
-.popup-content{
-background:#1e293b;
-padding:25px;
-border-radius:10px;
-width:90%;
-max-width:500px;
-text-align:center;
-}
-</style>
-</head><!-- WhatsApp Popup Button -->
-<div id="whatsappBtn" onclick="openWhatsPopup()">💬</div>
-
-<div id="whatsPopup" class="popup" onclick="closeWhatsPopup()">
-<div class="popup-content" onclick="event.stopPropagation()">
-<h2>Contact Me</h2>
-<p>Start chat on WhatsApp</p>
-
-<a href="https://wa.me/201115002997" target="_blank" class="btn">
-Open WhatsApp
-</a>
-
-</div>
-</div>
-
-<style>
-#whatsappBtn{
-position:fixed;
-bottom:20px;
-right:20px;
+bottom:25px;
+right:25px;
 background:#25D366;
-color:white;
-font-size:24px;
-width:60px;
-height:60px;
-display:flex;
-align-items:center;
-justify-content:center;
+width:55px;
+height:55px;
 border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:999;
+}
+
+.whatsapp img{
+width:28px;
+}
+
+/* ✅ التابس فقط (الإضافة الوحيدة) */
+.tabs{
+text-align:center;
+margin-bottom:30px;
+}
+
+.tab-btn{
+padding:10px 15px;
+margin:5px;
+border:none;
+background:#1e293b;
+color:white;
 cursor:pointer;
-z-index:4000;
-}
-</style>
-
-<script>
-function openWhatsPopup(){
-document.getElementById("whatsPopup").style.display="flex";
+border-radius:6px;
 }
 
-function closeWhatsPopup(){
-document.getElementById("whatsPopup").style.display="none";
+.tab-btn.active{
+background:#38bdf8;
 }
-</script>
+
+.tab-content{
+display:none;
+}
+
+.tab-content.active{
+display:block;
+}
 </style>
+</head>
+
 <body>
 
 <header>
@@ -141,6 +118,7 @@ document.getElementById("whatsPopup").style.display="none";
 
 <a class="btn" href="#projects">View My Work</a>
 <a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
+
 </header>
 
 <nav>
@@ -200,6 +178,7 @@ document.getElementById("whatsPopup").style.display="none";
 </div>
 </section>
 
+
 <section id="achievements">
 <h2>Achievements & Awards</h2>
 
@@ -223,272 +202,92 @@ document.getElementById("whatsPopup").style.display="none";
 <div class="card"><img src="images/award29.jpg" onclick="openImage(this.src)"><p></p></div>
 </div>
 </section>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khalil Ayman | Creative Portfolio</title>
-
-<style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
-body { background:#0f172a; color:white; line-height:1.6; }
-a { text-decoration:none; color:#38bdf8; }
-
-header { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; }
-header h1 { font-size:48px; margin-bottom:10px; }
-header p { font-size:20px; color:#cbd5f5; }
-
-.btn { margin-top:15px; padding:12px 25px; background:#38bdf8; border:none; border-radius:6px; color:white; display:inline-block; cursor:pointer; }
-
-nav { background:#020617; position:sticky; top:0; z-index:1000; }
-nav ul { display:flex; justify-content:center; list-style:none; }
-nav li { margin:0 20px; }
-nav a { color:white; display:block; padding:15px; }
-nav a:hover { color:#38bdf8; }
-
-section { max-width:1100px; margin:auto; padding:80px 20px; }
-h2 { text-align:center; margin-bottom:40px; font-size:32px; }
-
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
-
-.card { background:#1e293b; padding:20px; border-radius:10px; text-align:center; transition:.3s; cursor:pointer; }
-.card:hover { transform:translateY(-5px); }
-
-footer { background:#020617; text-align:center; padding:20px; }
-
-/* Tabs */
-.tab-content{display:none;}
-.tab-content.active{display:block;}
-
-/* Popup */
-#popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:3000;
-}
-.popup-box{
-background:#1e293b;
-padding:25px;
-border-radius:10px;
-width:90%;
-max-width:500px;
-text-align:center;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>Khalil Ayman Abdelaziz</h1>
-<p>Creative Content Creator | Freelancer</p>
-<p>Haram St., Giza – Egypt</p>
-
-<a class="btn" href="#projects">View My Work</a>
-<a class="btn" href="Khalil_Ayman_CV.pdf" download>Download CV</a>
-</header>
-
-<nav>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#achievements">Achievements</a></li>
-<li><a href="#projects">Works</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-
-<!-- Creative Works فقط هو اللي اتعدل -->
+<!-- 🔥 التابس فقط -->
 <section id="projects">
 <h2>Creative Works</h2>
 
-<div style="text-align:center;margin-bottom:30px;">
-<button class="btn" onclick="openTab('rest')">Restaurants</button>
-<button class="btn" onclick="openTab('cosmetics')">Cosmetics</button>
-<button class="btn" onclick="openTab('design')">Design</button>
-<button class="btn" onclick="openTab('shoes')">Shoes</button>
-<button class="btn" onclick="openTab('medical')">Medical</button>
-<button class="btn" onclick="openTab('barber')">Barber</button>
-<button class="btn" onclick="openTab('ads')">Ads</button>
+<div class="tabs">
+<button class="tab-btn active" onclick="openTab(event,'rest')">Restaurants</button>
+<button class="tab-btn" onclick="openTab(event,'cosmetics')">Cosmetics</button>
+<button class="tab-btn" onclick="openTab(event,'design')">Design</button>
+<button class="tab-btn" onclick="openTab(event,'shoes')">Shoes</button>
+<button class="tab-btn" onclick="openTab(event,'medical')">Medical</button>
+<button class="tab-btn" onclick="openTab(event,'barber')">Barber</button>
+<button class="tab-btn" onclick="openTab(event,'ads')">Ads</button>
 </div>
 
 <div id="rest" class="tab-content active">
 <div class="grid">
-<div class="card" onclick="openBrand('hirisk')">Hi Risk</div>
-<div class="card" onclick="openBrand('hameed')">Hameed</div>
+<div class="card">Hi Risk</div>
+<div class="card">Hameed</div>
 </div>
 </div>
 
 <div id="cosmetics" class="tab-content">
-<div class="grid">
-<div class="card" onclick="openBrand('ceramed')">Ceramed</div>
-</div>
+<div class="grid"><div class="card">Ceramed</div></div>
 </div>
 
 <div id="design" class="tab-content">
-<div class="grid">
-<div class="card" onclick="openBrand('mokbel')">Mokbel Design</div>
-</div>
+<div class="grid"><div class="card">Mokbel Design & Architecture</div></div>
 </div>
 
 <div id="shoes" class="tab-content">
-<div class="grid">
-<div class="card" onclick="openBrand('calzolaio')">Calzolaio</div>
-</div>
+<div class="grid"><div class="card">Calzolaio</div></div>
 </div>
 
 <div id="medical" class="tab-content">
-<div class="grid">
-<div class="card" onclick="openBrand('almoudawah')">Almoudawah</div>
-</div>
+<div class="grid"><div class="card">Almoudawah</div></div>
 </div>
 
 <div id="barber" class="tab-content">
-<div class="grid">
-<div class="card" onclick="openBrand('flebiny')">Flebiny Salon</div>
-</div>
+<div class="grid"><div class="card">Flebiny Salon</div></div>
 </div>
 
 <div id="ads" class="tab-content">
-<div class="grid">
-<div class="card" onclick="openBrand('ads')">Advertisements</div>
-</div>
+<div class="grid"><div class="card">Coming Soon</div></div>
 </div>
 
 </section>
 
-<!-- Popup -->
-<div id="popup" onclick="closePopup()">
-<div class="popup-box" onclick="event.stopPropagation()">
-<h2 id="title"></h2>
-<p id="desc"></p>
-<div id="links"></div>
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+📍 Giza, Egypt<br>
+📞 +201115002997<br>
+📞 +201273117296<br>
+✉ Khalil.aayousef@gmail.com
 </div>
+</section>
+
+<footer>
+© 2026 Khalil Ayman
+</footer>
+
+<a href="https://wa.me/201115002997" target="_blank" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+
+<div id="lightbox" onclick="closeImage()">
+<img id="lightbox-img">
 </div>
 
 <script>
-function openTab(id){
-document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
-document.getElementById(id).classList.add("active");
+function openImage(src){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=src;
+}
+function closeImage(){
+document.getElementById("lightbox").style.display="none";
 }
 
-function openBrand(b){
-
-const data={
-
-hirisk:{
-title:"Hi Risk",
-desc:"Restaurant & cafe in Tanta.",
-links:[
-["Instagram","https://www.instagram.com/hiriskcafe?utm_source=ig_web_button_share_sheet"],
-["TikTok","https://www.tiktok.com/@hi_risk1"],
-["Facebook","https://www.facebook.com"]
-]
-},
-
-ceramed:{
-title:"Ceramed",
-desc:"Cosmetics shop.",
-links:[
-["Instagram","https://www.instagram.com/ceramed.pharma"],
-["TikTok","https://www.tiktok.com/@ceramed.pharma"],
-["Facebook","https://www.facebook.com"]
-]
-},
-
-hameed:{
-title:"Hameed",
-desc:"Restaurant.",
-links:[
-["Instagram","https://www.instagram.com/hameedegypt"],
-["TikTok","https://www.tiktok.com/@hameedeg"],
-["Facebook","https://www.facebook.com"]
-]
-},
-
-mokbel:{
-title:"Mokbel Design & Architecture",
-desc:"Design & Architecture content.",
-links:[
-["Instagram","https://www.instagram.com/mokbeldesignco"],
-["TikTok","https://www.tiktok.com/@mokbel.designco"],
-["Facebook","https://www.facebook.com"]
-]
-},
-
-calzolaio:{
-title:"Calzolaio",
-desc:"Italian storytelling content.",
-links:[
-["Instagram","https://www.instagram.com/calzolaioegypt"],
-["TikTok","https://www.tiktok.com/@calzolaioegypt"],
-["Facebook","https://www.facebook.com"]
-]
-},
-
-almoudawah:{
-title:"Almoudawah Center",
-desc:"Physiotherapy & rehabilitation.",
-links:[
-["Instagram","https://www.instagram.com/almoudawah"],
-["TikTok","https://www.tiktok.com/@almoudawah11"],
-["Facebook","https://www.facebook.com"]
-]
-},
-
-flebiny:{
-title:"Flebiny Salon",
-desc:"Professional barber for celebrities.",
-links:[
-["Work","https://drive.google.com/drive/folders/1cU50kiA03-uOSvTkqK-fW02kgTCDMX7G"],
-["Facebook","https://www.facebook.com/share/1EzSyaTWBh/"],
-["Instagram","https://www.instagram.com/flebiny_salon"],
-["TikTok","https://www.tiktok.com/@flebinysalon"]
-]
-},
-
-ads:{
-title:"Advertisements",
-desc:"Creative campaigns.",
-links:[
-["Christmas","https://vt.tiktok.com/ZSHY1pSfk/"],
-["Novels","https://drive.google.com/file/d/1X-ASf6_zbiyZjJ6jNUF1tGXlCmvJr87l/view"],
-["Halan","https://drive.google.com/file/d/16WOXSdBURBaNYtBwVX0eapmpQwrLS7IQ/view"],
-["Vlog","https://drive.google.com/file/d/1aeLtUCkgWUGnuYmayYFvfFtHO6Fvd8n-/view"]
-]
-}
-
-};
-
-let item=data[b];
-
-document.getElementById("title").innerText=item.title;
-document.getElementById("desc").innerText=item.desc;
-
-let html="";
-item.links.forEach(l=>{
-html+=`<a href="${l[1]}" target="_blank" class="btn">${l[0]}</a><br>`;
-});
-
-document.getElementById("links").innerHTML=html;
-document.getElementById("popup").style.display="flex";
-}
-
-function closePopup(){
-document.getElementById("popup").style.display="none";
+function openTab(evt, tabId){
+document.querySelectorAll(".tab-content").forEach(tab=>tab.classList.remove("active"));
+document.querySelectorAll(".tab-btn").forEach(btn=>btn.classList.remove("active"));
+document.getElementById(tabId).classList.add("active");
+evt.currentTarget.classList.add("active");
 }
 </script>
 
 </body>
 </html>
-
