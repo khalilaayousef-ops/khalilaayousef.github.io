@@ -3,27 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khalil Ayman | ULTRA GOD MODE</title>
+<title>Khalil Ayman | GOD MODE</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 
 body{background:#020617;color:#fff;overflow-x:hidden}
 
-/* ===== INTRO ===== */
-#intro{
+/* ===== VIDEO BACKGROUND ===== */
+#bgVideo{
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+filter:brightness(0.3);
+}
+
+/* Overlay */
+.overlay{
 position:fixed;
 top:0;left:0;
 width:100%;height:100%;
-background:#020617;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-font-size:30px;
-animation:fadeOut 1s ease 2s forwards;
+background:linear-gradient(#020617cc,#020617);
+z-index:-1;
 }
-@keyframes fadeOut{to{opacity:0;visibility:hidden;}}
 
 /* ===== HEADER ===== */
 header{
@@ -34,6 +39,7 @@ justify-content:center;
 align-items:center;
 text-align:center;
 }
+
 header h1{
 font-size:60px;
 background:linear-gradient(90deg,#38bdf8,#22c55e);
@@ -41,40 +47,54 @@ background:linear-gradient(90deg,#38bdf8,#22c55e);
 color:transparent;
 }
 
+header p{color:#94a3b8;margin-top:10px}
+
+/* BUTTON */
 .btn{
 padding:12px 25px;
+margin-top:20px;
 border-radius:30px;
 background:linear-gradient(90deg,#38bdf8,#22c55e);
 border:none;
 color:#fff;
 cursor:pointer;
-margin-top:15px;
+transition:.3s;
 }
+.btn:hover{transform:scale(1.1)}
 
-/* GRID */
+/* ===== SECTIONS ===== */
+section{max-width:1100px;margin:auto;padding:80px 20px;}
+h2{text-align:center;margin-bottom:40px}
+
+/* ===== GRID ===== */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:25px;
 }
 
-section{max-width:1100px;margin:auto;padding:80px 20px;}
-h2{text-align:center;margin-bottom:30px;}
-
-/* CARD */
+/* ===== 3D CARD ===== */
 .card{
-background:#0f172a;
-padding:25px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+padding:30px;
 border-radius:15px;
+text-align:center;
 transition:.3s;
+transform-style:preserve-3d;
 cursor:pointer;
 }
+
 .card:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px #38bdf8;
+transform:rotateY(10deg) rotateX(5deg) scale(1.05);
+box-shadow:0 0 25px #38bdf8;
 }
 
-/* POPUP */
+/* ===== TABS ===== */
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+
+/* ===== POPUP ===== */
 #popup{
 position:fixed;
 top:0;left:0;
@@ -83,34 +103,24 @@ background:rgba(0,0,0,0.9);
 display:none;
 justify-content:center;
 align-items:center;
+z-index:999;
 }
+
 .popup-box{
 background:#0f172a;
 padding:25px;
-border-radius:10px;
+border-radius:15px;
 width:90%;
 max-width:500px;
+animation:zoom .3s;
 }
 
-/* AI CHAT */
-#ai{
-position:fixed;
-bottom:20px;
-left:20px;
-background:#0f172a;
-padding:15px;
-border-radius:10px;
-width:250px;
-}
-#ai input{
-width:100%;
-padding:10px;
-margin-top:10px;
-border:none;
-border-radius:5px;
+@keyframes zoom{
+from{transform:scale(.7);opacity:0}
+to{transform:scale(1);opacity:1}
 }
 
-/* WhatsApp */
+/* ===== WHATSAPP ===== */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -118,39 +128,66 @@ right:20px;
 background:#25D366;
 padding:15px;
 border-radius:50%;
+font-size:22px;
 cursor:pointer;
+box-shadow:0 0 15px #25D366;
+}
+
+/* ===== SCROLL EFFECT ===== */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:.8s;
+}
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<div id="intro">WELCOME</div>
+<!-- VIDEO -->
+<video autoplay muted loop id="bgVideo">
+<source src="https://cdn.coverr.co/videos/coverr-working-on-laptop-5174/1080p.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
 
 <header>
 <h1>Khalil Ayman</h1>
-<p>Elite Creative Machine</p>
-<a class="btn" href="#services">Hire Me</a>
+<p>GOD MODE Creative Portfolio</p>
+<a class="btn" href="#projects">Explore Work</a>
 </header>
 
-<!-- SERVICES -->
-<section id="services">
-<h2>Services</h2>
-<div class="grid">
-<div class="card">Content Creation</div>
-<div class="card">Video Editing</div>
-<div class="card">Branding</div>
-<div class="card">Ads Campaigns</div>
-</div>
-</section>
+<section id="projects">
+<h2>Creative Works</h2>
 
-<!-- WORK -->
-<section>
-<h2>Projects</h2>
-<div class="grid">
-<div class="card" onclick="openBrand('hirisk')">Hi Risk</div>
-<div class="card" onclick="openBrand('flebiny')">Flebiny</div>
+<div style="text-align:center;margin-bottom:20px;">
+<button class="btn" onclick="openTab('rest')">Restaurants</button>
+<button class="btn" onclick="openTab('barber')">Barber</button>
+<button class="btn" onclick="openTab('ads')">Ads</button>
 </div>
+
+<div id="rest" class="tab-content active">
+<div class="grid">
+<div class="card fade" onclick="openBrand('hirisk')">Hi Risk</div>
+<div class="card fade" onclick="openBrand('hameed')">Hameed</div>
+</div>
+</div>
+
+<div id="barber" class="tab-content">
+<div class="grid">
+<div class="card fade" onclick="openBrand('flebiny')">Flebiny Salon</div>
+</div>
+</div>
+
+<div id="ads" class="tab-content">
+<div class="grid">
+<div class="card fade" onclick="openBrand('ads')">Advertisements</div>
+</div>
+</div>
+
 </section>
 
 <!-- POPUP -->
@@ -162,28 +199,37 @@ cursor:pointer;
 </div>
 </div>
 
-<!-- AI -->
-<div id="ai">
-🤖 Ask me
-<input placeholder="Type..." onkeydown="chat(event)">
-<p id="aiRes"></p>
-</div>
-
-<!-- WhatsApp -->
 <div class="whatsapp" onclick="window.open('https://wa.me/201115002997')">💬</div>
 
 <script>
 
+/* Tabs */
+function openTab(id){
+document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
 /* Brands */
 function openBrand(b){
+
 const data={
-hirisk:{title:"Hi Risk",desc:"Boosted engagement + brand identity"},
-flebiny:{title:"Flebiny",desc:"Premium barber branding"}
+hirisk:{title:"Hi Risk",desc:"Restaurant content",links:[["Instagram","https://www.instagram.com/hiriskcafe"]]},
+hameed:{title:"Hameed",desc:"Food content",links:[["Instagram","https://www.instagram.com/hameedegypt"]]},
+flebiny:{title:"Flebiny Salon",desc:"Barber brand",links:[["Work","https://drive.google.com"]]},
+ads:{title:"Ads",desc:"Campaigns",links:[["Christmas","https://vt.tiktok.com"]]}
 };
 
 let item=data[b];
+
 document.getElementById("title").innerText=item.title;
 document.getElementById("desc").innerText=item.desc;
+
+let html="";
+item.links.forEach(l=>{
+html+=`<a class="btn" href="${l[1]}" target="_blank">${l[0]}</a><br>`;
+});
+
+document.getElementById("links").innerHTML=html;
 document.getElementById("popup").style.display="flex";
 }
 
@@ -191,15 +237,13 @@ function closePopup(){
 document.getElementById("popup").style.display="none";
 }
 
-/* AI Fake Chat */
-function chat(e){
-if(e.key==="Enter"){
-let v=e.target.value.toLowerCase();
-let res="I can help you with content, branding & ads.";
-if(v.includes("price")) res="Contact on WhatsApp 💬";
-document.getElementById("aiRes").innerText=res;
-}
-}
+/* Scroll animation */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){e.target.classList.add("show");}
+});
+});
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
 
 </script>
 
