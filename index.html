@@ -88,50 +88,8 @@ max-width:500px;
 text-align:center;
 }
 </style>
-</head><!-- WhatsApp Popup Button -->
-<div id="whatsappBtn" onclick="openWhatsPopup()">💬</div>
+</head>
 
-<div id="whatsPopup" class="popup" onclick="closeWhatsPopup()">
-<div class="popup-content" onclick="event.stopPropagation()">
-<h2>Contact Me</h2>
-<p>Start chat on WhatsApp</p>
-
-<a href="https://wa.me/201115002997" target="_blank" class="btn">
-Open WhatsApp
-</a>
-
-</div>
-</div>
-
-<style>
-#whatsappBtn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-font-size:24px;
-width:60px;
-height:60px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-cursor:pointer;
-z-index:4000;
-}
-</style>
-
-<script>
-function openWhatsPopup(){
-document.getElementById("whatsPopup").style.display="flex";
-}
-
-function closeWhatsPopup(){
-document.getElementById("whatsPopup").style.display="none";
-}
-</script>
-</style>
 <body>
 
 <header>
@@ -486,50 +444,6 @@ document.getElementById("popup").style.display="flex";
 
 function closePopup(){
 document.getElementById("popup").style.display="none";
-}
-</script>
-
-</body>
-</html>
-
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<div class="card">
-📍 Giza, Egypt<br>
-📞 +201115002997<br>
-📞 +201273117296<br>
-✉ Khalil.aayousef@gmail.com
-</div>
-</section>
-
-<footer>
-© 2026 Khalil Ayman
-</footer>
-
-<a href="https://wa.me/201115002997" target="_blank" class="whatsapp">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
-
-<div id="lightbox" onclick="closeImage()">
-<img id="lightbox-img">
-</div>
-
-<script>
-function openImage(src){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightbox-img").src=src;
-}
-function closeImage(){
-document.getElementById("lightbox").style.display="none";
-}
-
-function openTab(evt, tabId){
-document.querySelectorAll(".tab-content").forEach(tab=>tab.classList.remove("active"));
-document.querySelectorAll(".tab-btn").forEach(btn=>btn.classList.remove("active"));
-document.getElementById(tabId).classList.add("active");
-evt.currentTarget.classList.add("active");
 }
 </script>
 
