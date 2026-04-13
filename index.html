@@ -89,7 +89,49 @@ text-align:center;
 }
 </style>
 </head>
+<!-- WhatsApp Popup Button -->
+<div id="whatsappBtn" onclick="openWhatsPopup()">💬</div>
 
+<div id="whatsPopup" class="popup" onclick="closeWhatsPopup()">
+<div class="popup-content" onclick="event.stopPropagation()">
+<h2>Contact Me</h2>
+<p>Start chat on WhatsApp</p>
+
+<a href="https://wa.me/201115002997" target="_blank" class="btn">
+Open WhatsApp
+</a>
+
+</div>
+</div>
+
+<style>
+#whatsappBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:24px;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+cursor:pointer;
+z-index:4000;
+}
+</style>
+
+<script>
+function openWhatsPopup(){
+document.getElementById("whatsPopup").style.display="flex";
+}
+
+function closeWhatsPopup(){
+document.getElementById("whatsPopup").style.display="none";
+}
+</script>
 <body>
 
 <header>
